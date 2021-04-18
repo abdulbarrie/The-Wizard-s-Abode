@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/form.css">
+    <script type="text/javascript" src="../js/FormValidation.js"></script>
+    <title>Registration</title>
+</head>
+
+<body>
+    <header>
+        <img id="WizardsAbodeLogo" src="../css/fonts/The Wizard's Abode (Final Logo).png">
+        <h1>Register a New Account</h1>
+    </header>
+
+    <form name = "registerinfo">
+        <label for="uname">Username</label>
+        <input type="text" id="username" name="uname" required onkeyup="CheckUsernameStart(document.registerinfo.uname); 
+        CheckProperUsername(document.registerinfo.uname)"/>
+        <span id='char-message'></span>
+        <span id='uname-message'></span>
+        <br>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" required>
+        <span id='message2'></span>
+        <br>
+        
+        <label for="pword">Password</label>
+        <input type="password" id="password" name="pword" required onkeyup="CheckPassword(document.registerinfo.pword)">
+        <span id='message3'></span>
+        <br>
+
+        <label for="conpword">Confirm Password</label>
+        <input type="password" id="confirmpassword" name="conpword" required onkeyup="PasswordMatching()">
+        <span id='message4'></span>
+
+        <div>
+            <input type="checkbox" id="verifyage" name="verifyage" required>
+            <label for="verifyage">I am 13+ years of age.</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="termsofservice" name="termsofservice" required>
+            <label for="termsofservice">By clicking this box, I verify that I have read and agreed to the Terms of Service.</label>
+        </div>
+        
+        <a href="https://google.com" target="_blank">TOS and Privacy Rules</a>
+
+        <br>
+        <input type="submit" id="submit" name="submit" value="Create Account"/>
+    </form>
+
+    <footer>
+    </footer>
+    
+</body>
+</html>

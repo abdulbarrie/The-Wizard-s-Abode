@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/form.css">
+    <title>PostImage</title>
+</head>
+<body>
+    <header>
+        <img id="WizardsAbodeLogo" src="../css/fonts/The Wizard's Abode (Final Logo).png">
+        <h1>Post Image</h1>
+    </header>
+
+    <form>
+
+        <label for="newimage">Post a saved image from your computer:</label>
+        <input type="file" id="newimage" name="newimage" accept="image/png, image/jpeg" required>
+
+        <br>
+
+        <label for="title">Title of your post:</label>
+        <input type="text" name="title" required>
+
+        <br>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" cols="60" required></textarea>
+
+        <br>
+
+        <div>
+            <input type="checkbox" id="acceptableuse" name="acceptableuse" required>
+            <label for="acceptableuse">By clicking this box, I verify that I agree with the Acceptable Use Policy.</label>
+        </div>
+
+        <input type="submit" value="Post Image">
+
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,84 @@
+
+/* For the style of the Home.html document, I will use a similar aesthetic to the one established
+on the Form.css file, in that the Alegreya/Centaur font, background image and color scheme will be similar.
+As such, the next few blocks of code will be identical to the one on my Form file.*/
+@font-face {
+    font-family: "AlegreyaHeaderFont";
+    src: url("../css/fonts/Alegreya-Regular.otf");
+  }
+
+  @font-face {
+    font-family: "CentaurLabelFont";
+    src: url("../css/fonts/Centaur.ttf")
+  }
+
+  /* This is for the header, which will be centered along with the title. */
+header{
+  text-align: center;
+  margin-top: 1em;
+}
+
+ /* This block is for the body of my HTML files, specifically with a block display, 
+ a height of 1080px, a relative position and the background image.*/
+body {
+    display: block;
+    width: 100%;
+    height: 1080px;
+    position: static;
+    margin: auto;
+    background-image: url("../css/fonts/The\ Wizard\'s\ Abode\ Background\ Image.png");
+    background-repeat: repeat;
+  }
+
+/*This is the code for my hand-drawn and digitally edited logo, with a width of 330px 
+and a height of 240px. I added 10 pixels to the width so that the text could be a bit 
+more stretched out and readable.*/
+img[id="WizardsAbodeLogo"] {
+    width: 330px;
+    height: 240px;
+    filter: drop-shadow(0 0 0.2rem rgb(0, 0, 0));
+  }
+
+h1 {
+    font-family: "AlegreyaHeaderFont";
+    font-size: 45px;
+    text-align: center;
+    color : rgb(0, 204, 255);
+    text-shadow: -1px 0 rgb(76, 0, 255), 0 1px rgb(76, 0, 255), 1px 0 rgb(76, 0, 255), 0 -1px rgb(76, 0, 255);
+    text-shadow: 1px 1px 2px black;
+}
+
+h1[id="number-of-photos"] {
+    font-family: "CentaurLabelFont";
+    font-size: 30px;
+    text-shadow: 1px 1px 1.5px black;
+
+}
+
+
+#HomepagePhotos{
+  width: 800px;
+  height: 800px;
+  margin: auto;
+  display: grid;
+  gap: 150px 2px;
+  justify-items: center;
+  grid-template-columns: repeat(4, 200px);
+  grid-template-rows: repeat(4, 200px);
+  grid-auto-columns: repeat(4, 200px);
+  grid-auto-rows: repeat(4, 200px);
+}
+
+figcaption {
+  font-family: "CentaurLabelFont";
+  font-size: 20px;
+
+  text-align: center;  color :rgb(0, 0, 0);
+  text-shadow: -1px 0 rgb(76, 0, 255), 0 1px rgb(76, 0, 255), 1px 0 rgb(76, 0, 255), 0 -1px rgb(76, 0, 255);
+  text-shadow: 1px 1px 2px black;
+  clear: both;
+}
+
+  /*
+  */
+    

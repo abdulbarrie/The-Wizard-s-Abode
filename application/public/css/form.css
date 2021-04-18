@@ -1,0 +1,169 @@
+
+/* "Font-face" is used here so that I can import my downloaded fonts to the file. 
+Alegreya will be used for the main header, while Centaur will be for other miscellaneous text.*/
+@font-face {
+    font-family: "AlegreyaHeaderFont";
+    src: url("../css/fonts/Alegreya-Regular.otf");
+  }
+
+  @font-face {
+    font-family: "CentaurLabelFont";
+    src: url("../css/fonts/Centaur.ttf")
+  }
+
+ /* This block is for the body of my HTML files, specifically with a block display, 
+ a height of 1080px, a relative position and the background image.*/
+body {
+    display: block;
+    width: 100%;
+    height: 1080px;
+    position: relative;
+    margin: auto;
+    background-image: url("../css/fonts/The\ Wizard\'s\ Abode\ Background\ Image.png");
+    background-repeat: no-repeat; 
+  }
+    
+
+/* This is for the header, which will be centered along with the title. */
+header{
+
+  text-align: center;
+  margin-top: 1em;
+}
+/*This is the code for my hand-drawn and digitally edited logo, with a width of 330px 
+and a height of 240px. I added 10 pixels to the width so that the text could be a bit 
+more stretched out and readable.*/
+img[id="WizardsAbodeLogo"] {
+  width: 330px;
+  height: 240px;
+  filter: drop-shadow(0 0 0.2rem rgb(0, 0, 0));
+}
+
+/* Here, my h1 text will have an Alegreya font with 45 px size, a centered text and a light-blue color,
+and a shadow to make the text pop out and look professional. */
+h1 {
+    font-family: "AlegreyaHeaderFont";
+    font-size: 45px;
+    text-align: center;
+    color : rgb(0, 204, 255);
+    text-shadow: -1px 0 rgb(76, 0, 255), 0 1px rgb(76, 0, 255), 1px 0 rgb(76, 0, 255), 0 -1px rgb(76, 0, 255);
+    text-shadow: 1px 1px 2px black;
+}
+
+
+/* The label sections will be blocked and centered because it's an inline element. 
+There will also be a text shadow to make the text stand out.*/
+label {
+  display: block;
+  text-align: center;
+  font-family: "CentaurLabelFont";
+  font-size: 20px;
+  text-shadow: 0px 1px 2px rgb(34, 31, 31);
+}
+
+/*These next few label sections are for the "Verify Age," "TOS" and "Acceptable Use" text;
+to make them more readable while also highlighting their importance, 
+I added a pink color to them.*/
+label[for="verifyage"] {
+  display: block;
+  text-align: center;
+  font-family: "CentaurLabelFont";
+  font-size: 20px;
+  color: rgb(255, 0, 255);
+  text-shadow: 0px 1px 2px rgb(0, 0, 0);
+}
+
+label[for="termsofservice"] {
+  display: block;
+  text-align: center;
+  font-family: "CentaurLabelFont";
+  font-size: 20px;
+  color: rgb(255, 0, 255);
+  text-shadow: 0px 1px 2px rgb(0, 0, 0);
+}
+
+label[for="acceptableuse"] {
+  display: block;
+  text-align: center;
+  font-family: "CentaurLabelFont";
+  font-size: 20px;
+  color: rgb(255, 0, 255);
+
+  text-shadow: 0px 1px 2px rgb(0, 0, 0);
+}
+
+/* The input boxes besides the description will be aligned with a simple drop shadow.*/
+input {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  box-shadow: 0px 1px 2px rgb(255, 255, 255);
+}
+
+/* For the description, the box will be scaled to 500*100px as it would allow 
+anyone to type their caption for it while actually seeing it in full.*/
+textarea[id="description"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 0px 0px 1px black;
+}
+
+/*This checkbox block of code is to center each box where users would have
+to click in order to verify their age and agreement with the 
+TOS/Acceptable Use Rules.
+*I couldn't find a way to align it in the same row as the TOS labels.*/
+input[type="checkbox"] {
+  display: block;
+  margin-top: 0.3cm;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*This is the link to the TOS rules designed with the Centaur font and centered in the page.*/
+a {
+  display: block;
+  text-align: center;
+  color: rgb(255, 0, 255);
+  font-family: "CentaurLabelFont";
+  text-shadow: 0px 1px 2px black;
+}
+
+/*This #newimage section was designed so that there wouldn't be any drop shadow on 
+the "Choose File" border. When I applied drop shadow to the boxes, they produced 
+the effect I wanted on all of them except this one, so I made a new property with 
+the "Choose File" box as the selector.*/
+#newimage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 0px 0px rgb(0, 0, 0);
+}
+
+/*This is for the <p> element of the "imagepost.html" file. I simply displayed it
+as a block and centered it along with adding a drop shadow and Centaur text.*/
+p {
+  display: block;
+  text-align: center;
+  font-family: "CentaurLabelFont";
+  font-size: 20px;
+  text-shadow: 1px 1px 1.5px black;
+}
+
+/*The image for "imagepost" contains a drop shadow and is centered on the page.*/
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  filter: drop-shadow(0 0 0.2rem rgb(0, 0, 0));
+}
+
+/*Update as of 4/3/2021: I added an extra tag to registration.html which will be stylized here.*/
+span {
+  display: block;
+  text-align: center;
+  font-family: "CentaurLabelFont";
+  font-size: 20px;
+  text-shadow: 1px 1px 1.5px black;
+}
