@@ -4,7 +4,7 @@ function fadeOut(event) {
 
 
 /*I was able to print all images with 4 rows without any text or titles,
-but I couldn't figure out how to place the titles below wech image.*/ 
+but I couldn't figure out how to place the titles below each image.*/ 
 function newPhotoTile(data, containerDiv) {
     document.body.onload = newPhotoTile;
     let div = document.createElement('div');
