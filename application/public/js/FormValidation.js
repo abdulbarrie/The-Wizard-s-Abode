@@ -3,80 +3,53 @@
 matching password) was entered.*/
 
 
-function CheckUsernameStart(characterInput) {
+
+var usernameInput = document.getElementById("username");
+var passwordInput = document.getElementById("password");
+var confirmPassword = document.getElementById("confirmpassword");
+
+
+usernameInput.onkeyup = function CheckUsername() {
+    /*Check if the username starts with an alphanumeric character.*/
     var beginningUsername = /^[A-Za-z][A-Za-z0-9]+$/;
-    if(characterInput.value.match(beginningUsername)) {
-        document.getElementById('submit').onclick = function(){
+    if (usernameInput.value.match(beginningUsername)) {
         document.getElementById('char-message').style.color = 'green';
         document.getElementById('char-message').innerHTML = 'Valid first character.';
-        return true;
+    } else {    
+        document.getElementById('char-message').style.color = 'red';
+        document.getElementById('char-message').innerHTML = 'Error: Username must begin with an alphanumeric character.';
+    }
+
+    /*Check if the username contains at least three characters.*/
+    var usernameCharacters = /^[A-Za-z]\w{2,20}$/;
+    if (usernameInput.value.match(usernameCharacters)) {        
+        document.getElementById('uname-message').style.color = 'green';
+        document.getElementById('uname-message').innerHTML = 'Good username!';
+    } else {    
+        document.getElementById('uname-message').style.color = 'red';
+        document.getElementById('uname-message').innerHTML = 'Error: Username must contain at least 3 alphanumeric characters.';
         }
-    } else if (!characterInput.value.match(beginningUsername)) {
-        document.getElementById('submit').addEventListener("click", function(event) {
-            event.preventDefault();
-            document.getElementById('char-message').style.color = 'red';
-            document.getElementById('char-message').innerHTML = 'Error: Username must begin with an alphanumeric character.';
-            return false;
-        }); 
-    }
-}
-
-    function CheckProperUsername(usernameInput) {
-        var usernameCharacters =  /^[A-Za-z]\w{2,20}$/;
-        if(usernameInput.value.match(usernameCharacters)) {
-            document.getElementById('submit').onclick = function(){
-                document.getElementById('uname-message').style.color = 'green';
-                document.getElementById('uname-message').innerHTML = 'Good username!';
-                return true;
-            }
-        } else {
-            document.getElementById('submit').addEventListener("click", function(event) {
-                event.preventDefault();
-                document.getElementById('uname-message').style.color = 'red';
-                document.getElementById('uname-message').innerHTML = 'Error: Username must contain at least 3 alphanumeric characters.';
-                return false;
-        });
-    }
 }
 
 
-
-
-function CheckPassword(passwordInput) { 
+passwordInput.onkeyup = function CheckPassword() { 
     var passwordCharacters = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
     if (passwordInput.value.match(passwordCharacters)) {
-        document.getElementById('submit').onclick = function(){
-        document.getElementById('message3').style.color = 'green';
-        document.getElementById('message3').innerHTML = 'Valid Password';
-        return true;
-        }
+        document.getElementById('pword-message').style.color = 'green';
+        document.getElementById('pword-message').innerHTML = 'Valid Password';  
     } else { 
-        document.getElementById('submit').addEventListener("click", function(event) {
-            event.preventDefault();
-            document.getElementById('message3').style.color = 'red';
-            document.getElementById('message3').innerHTML = 'Error: Password must be at least 8 characters and contain 1 letter, 1 number and a symbol.';
-            return false;
-        });
+        document.getElementById('pword-message').style.color = 'red'; 
+        document.getElementById('pword-message').innerHTML = 'Error: Password must be at least 8 characters and contain 1 letter, 1 number and a symbol.';  
     }
-}
 
-function PasswordMatching() {
-    var passwordCharacters = document.getElementById("password").value;
-    var confirmPassword = document.getElementById("confirmpassword").value;
-    if (passwordCharacters == confirmPassword) {
-        document.getElementById('submit').onclick = function(){
-        document.getElementById('message4').style.color = 'green';
-        document.getElementById('message4').innerHTML = 'Passwords Match';
-        return true;
-        }
-        } else {
-        document.getElementById('submit').addEventListener("click", function(event) {
-            event.preventDefault();
-            document.getElementById('message4').style.color = 'red';
-            document.getElementById('message4').innerHTML = 'Error: Passwords do not match.';
-            return false;
-        });
+    if (passwordInput.value.match(confirmPassword)) {
+        document.getElementById('match-message').style.color = 'green';
+        document.getElementById('match-message').innerHTML = 'Passwords Match';
+    } else {
+        document.getElementById('match-message').style.color = 'red';
+        document.getElementById('match-message').innerHTML = 'Error: Passwords do not match.';
     }
+
 }
 
 

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="public/css/form.css">
-    <script type="text/javascript" src="public/js/FormValidation.js"></script>
     <title>Registration - The Wizard's Abode</title>
 </head>
 
@@ -12,27 +11,26 @@
   
     <h1>Register a New Account</h1>
 
-    <form name = "registerinfo">
+    <form name="registerinfo">
         <label for="uname">Username</label>
-        <input type="text" id="username" name="uname" required onkeyup="CheckUsernameStart(document.registerinfo.uname); 
-        CheckProperUsername(document.registerinfo.uname)"/>
+        <input class="LoginRegisterInputFields" type="text" id="username" name="uname" required>
         <span id='char-message'></span>
         <span id='uname-message'></span>
         <br>
 
         <label for="email">Email</label>
-        <input type="email" name="email" required>
+        <input class="LoginRegisterInputFields" type="email" name="email" required>
         <span id='message2'></span>
         <br>
         
         <label for="pword">Password</label>
-        <input type="password" id="password" name="pword" required onkeyup="CheckPassword(document.registerinfo.pword)">
-        <span id='message3'></span>
+        <input class="LoginRegisterInputFields" type="password" id="password" name="pword" required>
+        <span id='pword-message'></span>
         <br>
 
         <label for="conpword">Confirm Password</label>
-        <input type="password" id="confirmpassword" name="conpword" required onkeyup="PasswordMatching()">
-        <span id='message4'></span>
+        <input class="LoginRegisterInputFields" type="password" id="confirmpassword" name="conpword" required>
+        <span id='match-message'></span>
 
         <div>
             <input type="checkbox" id="verifyage" name="verifyage" required>
@@ -49,8 +47,7 @@
         <br>
         <input type="submit" id="submit" name="submit" value="Create Account"/>
     </form>
-
     
-    
+<script type="text/javascript" src="public/js/FormValidation.js" defer></script>
 </body>
 </html>

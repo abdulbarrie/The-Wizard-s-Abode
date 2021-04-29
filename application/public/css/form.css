@@ -88,26 +88,42 @@ label[for="acceptableuse"] {
   font-family: "CentaurLabelFont";
   font-size: 20px;
   color: rgb(255, 0, 255);
-
   text-shadow: 0px 1px 2px rgb(0, 0, 0);
 }
 
-/* The input boxes besides the description will be aligned with a simple drop shadow.*/
-input {
+/* The input boxes besides the description will be aligned with a simple drop shadow.
+4/28/2021 EDIT: I decided to add a drop shadow to the description too. Also, I added 
+a new class name to the HTML input tags and defined them so that the height, width 
+and text font is defined for all input boxes.*/
+
+input.LoginRegisterInputFields {
   display: block;
   margin-right: auto;
   margin-left: auto;
   box-shadow: 0px 1px 2px rgb(255, 255, 255);
+  font-family: "CentaurLabelFont";
+  font-size: 18px;
+  text-shadow: 0px 1px 1px rgb(0, 0, 0);
+}
+
+input[type="submit"] {
+  display: block;
+  margin-top: 0.3cm;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* For the description, the box will be scaled to 500*100px as it would allow 
 anyone to type their caption for it while actually seeing it in full.*/
 textarea[id="description"] {
   display: block;
+  resize: vertical;
   margin-left: auto;
   margin-right: auto;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "CentaurLabelFont";
+  text-justify: auto;
   text-shadow: 0px 0px 1px black;
+  box-shadow: 0px 1px 2px rgb(98, 0, 255);
 }
 
 /*This checkbox block of code is to center each box where users would have
@@ -121,6 +137,16 @@ input[type="checkbox"] {
   margin-right: auto;
 }
 
+input[id="posttitle"] {
+  display: block;
+  margin-top: 0.3cm;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 1px 2px rgb(255, 255, 255);
+  font-family: "CentaurLabelFont";
+  font-size: 20px;
+  text-shadow: 0px 0px 1px black;
+}
 /*This is the link to the TOS rules designed with the Centaur font and centered in the page.*/
 a {
   display: block;
