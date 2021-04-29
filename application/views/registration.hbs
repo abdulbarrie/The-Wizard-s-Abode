@@ -13,7 +13,8 @@
 
     <form name="registerinfo">
         <label for="uname">Username</label>
-        <input class="LoginRegisterInputFields" type="text" id="username" name="uname" required>
+        <input class="LoginRegisterInputFields" type="text" id="username" name="uname" 
+         maxlength="20" required>
         <span id='char-message'></span>
         <span id='uname-message'></span>
         <br>
@@ -24,7 +25,8 @@
         <br>
         
         <label for="pword">Password</label>
-        <input class="LoginRegisterInputFields" type="password" id="password" name="pword" required>
+        <input class="LoginRegisterInputFields" type="password" id="password" name="pword" 
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
         <span id='pword-message'></span>
         <br>
 
@@ -48,6 +50,6 @@
         <input type="submit" id="submit" name="submit" value="Create Account"/>
     </form>
     
-<script type="text/javascript" src="public/js/FormValidation.js" defer></script>
+<script defer type="text/javascript" src="public/js/FormValidation.js"></script>
 </body>
 </html>

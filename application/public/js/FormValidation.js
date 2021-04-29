@@ -6,7 +6,7 @@ matching password) was entered.*/
 
 var usernameInput = document.getElementById("username");
 var passwordInput = document.getElementById("password");
-var confirmPassword = document.getElementById("confirmpassword");
+
 
 
 usernameInput.onkeyup = function CheckUsername() {
@@ -42,6 +42,7 @@ passwordInput.onkeyup = function CheckPassword() {
         document.getElementById('pword-message').innerHTML = 'Error: Password must be at least 8 characters and contain 1 letter, 1 number and a symbol.';  
     }
 
+    var confirmPassword = document.getElementById("confirmpassword");
     if (passwordInput.value.match(confirmPassword)) {
         document.getElementById('match-message').style.color = 'green';
         document.getElementById('match-message').innerHTML = 'Passwords Match';
