@@ -11,10 +11,10 @@
   
     <h1>Register a New Account</h1>
 
-    <form id="registerinfo">
+    <form id="registerinfo" >
         <label for="uname">Username</label>
         <input class="LoginRegisterInputFields" type="text" id="username" name="uname" 
-        required onkeyup="CheckUsername();">
+        required>
         <span id='char-message'></span>
         <span id='uname-message'></span>
         <br>
@@ -26,13 +26,13 @@
         
         <label for="pword">Password</label>
         <input class="LoginRegisterInputFields" type="password" id="password" name="pword" required
-        onkeyup="CheckPassword();">
+        >
         <span id='pword-message'></span>
         <br>
 
         <label for="conpword">Confirm Password</label>
         <input class="LoginRegisterInputFields" type="password" id="confirmpassword" name="conpword" required
-        onkeyup="MatchingPassword();">
+        >
         <span id='match-message'></span>
 
         <div>
@@ -48,7 +48,7 @@
         <a href="https://google.com" target="_blank">TOS and Privacy Rules</a>
 
         <br>
-        <input type="submit" id="submit" name="submit" value="Create Account"/>
+        <input type="submit" id="submit" name="submit" value="Create Account" onclick="return FormValidation();"/>
     </form>
     
 <script defer type="text/javascript" src="public/js/FormValidation.js"></script>
