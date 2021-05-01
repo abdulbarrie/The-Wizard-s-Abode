@@ -2,17 +2,17 @@
         <img id="WizardsAbodeLogo" src="./public/css/fonts/The Wizard's Abode (Final Logo).png">
         <div id = "wrapper">
             <div class="navigationbar">
-                <a class="active" href="/">The Column</a>
-                <a href="/postimage">Post Image</a>
-                <a href="/imagepost">Image of the Day</a>
+                <a class="active" href="/" id="theabode-columnhomepage">The Column</a>
+                <a href="/postimage" id="theabode-postnewimage">Post Image</a>
+                <a href="/imagepost" id="theabode-imageoftheday">Image of the Day</a>
 
                 {{#if logged}}
-                <a href="/users/logout">Log Out</a>
+                <a href="/users/logout" id="theabode-logout">Log Out</a>
                 {{else}}
-                <a href="/login">Log In</a>
+                <a href="/login" id="theabode-login">Log In</a>
                 {{/if}}
                 
-                <a href="/registration">Sign Up</a>
+                <a href="/registration" id="theabode-signupregister">Sign Up</a>
             </div>
         </div>
     </header>

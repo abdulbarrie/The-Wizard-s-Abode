@@ -28,7 +28,7 @@ router.post('/register', (req, res, next) => {
       return db.execute("SELECT * FROM users WHERE email=?", [email]);
     } else {
       throw new UserError (
-        "Registration Failed: Username already exists",
+        "Registration Failed: Username already exists.",
         "/registration",
         200
       );
@@ -39,7 +39,7 @@ router.post('/register', (req, res, next) => {
       return bcrypt.hash(password,15);
     } else {
       throw new UserError(
-        "Registration Failed: Email already exists",
+        "Registration Failed: Email already exists.",
         "/registration",
         200
       );
@@ -57,14 +57,14 @@ router.post('/register', (req, res, next) => {
         res.redirect('/login');
      } else {
        throw new UserError(
-         "Server Error, user could not be created",
+         "Server Error, user could not be created.",
          "/registration",
          500
        );
      }
    })
    .catch((err) => {
-    errorPrint("User could not be made", err);
+    errorPrint("User could not be made.", err);
      if (err instanceof UserError) {
         errorPrint(err.getMessage());
         res.status(err.getStatus());
@@ -88,7 +88,7 @@ router.post('/login', (req, res, next) => {
         userId = results[0].id;
         return bcrypt.compare(password, hashedPassword);
       } else {
-        throw new UserError("invalid username and/or password!", "/login", 200);
+        throw new UserError("Invalid username and/or password!", "/login", 200);
     }
   })
   .then((passwordsMatched) => {
@@ -99,7 +99,7 @@ router.post('/login', (req, res, next) => {
       res.locals.logged = true;
       res.redirect('/');
     } else {
-      throw new UserError("invalid username and/or password!", "/login", 200);
+      throw new UserError("Invalid username and/or password!", "/login", 200);
     }
   })
   .catch((err) => {
@@ -111,10 +111,22 @@ router.post('/login', (req, res, next) => {
     } else {
       next(err);
     }
+  });
+});
+
+router.post('/logout',(req, res, next) => {
+  req.session.destroy((err) => {
+    if (err) {
+      errorPrint('Session could not be destroyed.');
+      next(err);
+    } else {
+      successPrint('Session was destroyed.');
+      res.clearCookie('csld');
+      res.json({status:"OK", message:"User is logged out."});
+    }
   })
+});
 
-
-})
 module.exports = router;
 
 

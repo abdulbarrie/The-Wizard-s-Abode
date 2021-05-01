@@ -19,6 +19,23 @@
          {{{body}}}
          {{> footer}}
      </div>
+
+     {{#if logged}}
+        <script>
+            let element = document.getElementById('theabode-logout');
+            if (element) {
+                element.onclick = (even) => {
+                    fetch('/users/logout',{
+                        method:"POST"
+                    })
+                    .then((data) => {
+                        location.replace('/');
+                    })
+                }
+            }
+        </script>
+
+     {{/if}}
  </body>
 
  </html>
