@@ -26,10 +26,10 @@ body {
 
 /* This is for the header, which will be centered along with the title. */
 header{
-
   text-align: center;
   margin-top: 1em;
 }
+
 /*This is the code for my hand-drawn and digitally edited logo, with a width of 330px 
 and a height of 240px. I added 10 pixels to the width so that the text could be a bit 
 more stretched out and readable.*/

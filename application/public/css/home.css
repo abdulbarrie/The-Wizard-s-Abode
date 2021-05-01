@@ -127,6 +127,26 @@ figcaption {
   clear: both;
 }
 
+/*The flash-message blocks of code is for showing the error or success message when a user logs in.*/
+#flash-message {
+  position: relative;
+}
+
+#flash-message div {
+  text-align: center;
+  font-family: "CentaurLabelFont";
+  font-size: 30px;
+  text-shadow: 1px 1px 2px black;
+}
+
+.alert-danger{
+  color:rgb(255, 0, 0)
+}
+
+.alert-success{
+  color: rgb(0, 255, 0);
+}
+
   /*
   */
     

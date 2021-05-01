@@ -4,6 +4,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sessions = require('express-session');
 var mysqlSession = require('express-mysql-session')(sessions);
+var flash = require('express-flash');
+
 
 var handlebars = require('express-handlebars');
 var indexRouter = require('./routes/index');
@@ -23,8 +25,8 @@ app.engine(
         extname: ".hbs",
         defaultLayout: "home",
         helpers: {
-            renderLink: () =>{
-
+            emptyObject: (obj) => {
+                return !(obj.constuctor === Object && Object.keys(obj).length == 0);
             }
 
             /**
@@ -51,6 +53,7 @@ app.use(sessions({
     saveUninitialized: false
 }));
 
+app.use(flash());
 app.set("view engine", "hbs");
 app.use(logger('dev'));
 app.use(express.json());
@@ -70,6 +73,7 @@ app.use((req, res, next) => {
     }
     next();
 })
+
 app.use("/", indexRouter);
 app.use("/dbtest", dbRouter);
 app.use("/users", usersRouter);
