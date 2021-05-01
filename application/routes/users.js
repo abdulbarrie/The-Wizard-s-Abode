@@ -79,11 +79,13 @@ router.post('/login', (req, res, next) => {
   let username = req.body.uname;
   let password = req.body.pword;
 
-  let baseSQL = "SELECT username, password FROM users where username=?;"
+  let baseSQL = "SELECT id, username, password FROM users where username=?;"
+  let userId;
   db.execute(baseSQL,[username])
   .then(([results, fields]) => {
     if (results && results.length == 1) {
         let hashedPassword = results[0].password;
+        userId = results[0].id;
         return bcrypt.compare(password, hashedPassword);
       } else {
         throw new UserError("invalid username and/or password!", "/login", 200);
@@ -92,6 +94,8 @@ router.post('/login', (req, res, next) => {
   .then((passwordsMatched) => {
     if (passwordsMatched) {
       successPrint(`User ${username} is logged in`);
+      req.session.username = username;
+      req.session.userId = userId;
       res.locals.logged = true;
       res.redirect('/');
     } else {

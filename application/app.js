@@ -2,6 +2,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var sessions = require('express-session');
+var mysqlSession = require('express-mysql-session')(sessions);
+
 var handlebars = require('express-handlebars');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -32,6 +35,22 @@ app.engine(
     })
 );
 
+
+var mysqlSessionStore = new mysqlSession(
+    {
+        /* using default options */
+    },
+    require('./conf/database')
+    
+);
+app.use(sessions({
+    key: "csid",
+    secret: "this is a secret from csc317",
+    store: mysqlSessionStore,
+    resave: false,
+    saveUninitialized: false
+}));
+
 app.set("view engine", "hbs");
 app.use(logger('dev'));
 app.use(express.json());
@@ -41,12 +60,16 @@ app.use("/public", express.static(path.join(__dirname, 'public')));
 
 app.use((req, res, next) => {
     requestPrint(req.url);
-
-
-
     next();
 });
 
+app.use((req, res, next) => {
+    console.log(req.session);
+    if (req.session.username) {
+        res.locals.logged = true;
+    }
+    next();
+})
 app.use("/", indexRouter);
 app.use("/dbtest", dbRouter);
 app.use("/users", usersRouter);
