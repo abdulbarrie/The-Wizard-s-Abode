@@ -1,12 +1,17 @@
  <header>
-        <img id="WizardsAbodeLogo" src="public/css/fonts/The Wizard's Abode (Final Logo).png">
+        <img id="WizardsAbodeLogo" src="./public/css/fonts/The Wizard's Abode (Final Logo).png">
         <div id = "wrapper">
             <div class="navigationbar">
                 <a class="active" href="/">The Column</a>
                 <a href="/postimage">Post Image</a>
                 <a href="/imagepost">Image of the Day</a>
-                {{log this}}
+
+                {{#if logged}}
+                <a href="/users/logout">Log Out</a>
+                {{else}}
                 <a href="/login">Login</a>
+                {{/if}}
+                
                 <a href="/registration">Sign Up</a>
             </div>
         </div>

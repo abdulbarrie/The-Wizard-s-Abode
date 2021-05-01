@@ -47,9 +47,9 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/', indexRouter);
-app.use('/dbtest', dbRouter)
-app.use('/users', usersRouter);
+app.use("/", indexRouter);
+app.use("/dbtest", dbRouter);
+app.use("/users", usersRouter);
 
 app.use((err, req, res, next) => {
     console.log(err);

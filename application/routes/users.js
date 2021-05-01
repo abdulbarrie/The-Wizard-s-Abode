@@ -4,6 +4,7 @@ var db = require('../conf/database');
 var UserError = require('../helpers/error/UserError');
 var errorPrint = require('../helpers/debug/debugprinters').errorPrint;
 var successPrint = require('../helpers/debug/debugprinters').successPrint;
+var bcrypt = require('bcrypt');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -35,8 +36,7 @@ router.post('/register', (req, res, next) => {
    })
    .then(([results, fields]) => {
     if(results && results.length == 0) {
-      let baseSQL = "INSERT into users (username, email, password, created) VALUES (?,?,?,now());"
-      return db.execute(baseSQL,[username, email, password])
+      return bcrypt.hash(password,15);
     } else {
       throw new UserError(
         "Registration Failed: Email already exists",
@@ -44,6 +44,12 @@ router.post('/register', (req, res, next) => {
         200
       );
     }
+   })
+   .then((hashedPassword) => {
+    
+      let baseSQL = "INSERT into users (username, email, password, created) VALUES (?,?,?,now());"
+      return db.execute(baseSQL,[username, email, hashedPassword])
+   
    })
    .then(([results, fields]) => {
      if(results && results.affectedRows) {
@@ -73,10 +79,18 @@ router.post('/login', (req, res, next) => {
   let username = req.body.uname;
   let password = req.body.pword;
 
-  let baseSQL = "SELECT username, password FROM users where username=? AND password=?;"
-  db.execute(baseSQL,[username,password])
+  let baseSQL = "SELECT username, password FROM users where username=?;"
+  db.execute(baseSQL,[username])
   .then(([results, fields]) => {
     if (results && results.length == 1) {
+        let hashedPassword = results[0].password;
+        return bcrypt.compare(password, hashedPassword);
+      } else {
+        throw new UserError("invalid username and/or password!", "/login", 200);
+    }
+  })
+  .then((passwordsMatched) => {
+    if (passwordsMatched) {
       successPrint(`User ${username} is logged in`);
       res.locals.logged = true;
       res.redirect('/');
@@ -98,3 +112,5 @@ router.post('/login', (req, res, next) => {
 
 })
 module.exports = router;
+
+
