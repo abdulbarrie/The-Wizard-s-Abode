@@ -26,8 +26,10 @@ body {
     height: 1080px;
     position: relative;
     margin: auto;
-    background-image: url("../css/fonts/The\ Wizard\'s\ Abode\ Background\ Image.png");
-    background-repeat: repeat;
+    background-image: url("../css/fonts/The\ Wizard\'s\ Abode\ Background\ Image\ \(Fade\ Version\ 1\).png");
+    background-attachment: scroll;
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
   }
 
 /*This is the code for my hand-drawn and digitally edited logo, with a width of 330px 

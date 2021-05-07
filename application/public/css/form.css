@@ -19,8 +19,11 @@ body {
     height: 1080px;
     position: absolute;
     margin: auto;
-    background-image: url("../css/fonts/The\ Wizard\'s\ Abode\ Background\ Image.png");
+    background-image: url("../css/fonts/The\ Wizard\'s\ Abode\ Background\ Image\ \(Fade\ Version\ 1\).png");
+    background-attachment: scroll;
+    background-position: 50% 0%;
     background-repeat: no-repeat; 
+    background-color: rgb(0, 0, 0);
   }
     
 
