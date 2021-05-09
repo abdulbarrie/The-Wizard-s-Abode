@@ -1,7 +1,8 @@
 
    
 <h1>Welcome to the Wizard's Column!</h1>
-    <div id = "imageborder"> 
-        <div id = "HomepagePhotos">
-        </div>
+    <div id="imageborder">
+        {{#each results}}
+            {{> card this}}
+         {{/each}}
     </div>

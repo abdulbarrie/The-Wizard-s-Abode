@@ -45,7 +45,7 @@ h1 {
     font-family: "AlegreyaHeaderFont";
     font-size: 45px;
     text-align: center;
-    color : rgb(0, 204, 255);
+    color: rgb(0, 204, 255);
     text-shadow: -1px 0 rgb(76, 0, 255), 0 1px rgb(76, 0, 255), 1px 0 rgb(76, 0, 255), 0 -1px rgb(76, 0, 255);
     text-shadow: 1px 1px 2px black;
 }
@@ -56,19 +56,7 @@ h1[id="number-of-photos"] {
     text-shadow: 1px 1px 1.5px black;
 
 }
-/*This is for the background border surrounding the images.*/
-#imageborder{
-  position: static;
-  display: flex;
-  width: 1000px;
-  height: 8700px;
-  margin: 0px auto;
-  border: 1px solid black;
-  border-radius: 10px;
-  border-top: violet;
-  background: white;
-  filter: drop-shadow(0 0 0.2rem rgb(0, 0, 0));
-}
+
 
 /*This wrapper tag is for the navigation bar, which will feature buttons 
 that take the user to different portions of the website. The button styling 
@@ -105,25 +93,84 @@ is located down below.*/
   color: black;
 }
 
-#HomepagePhotos{
-  position: fixed;
-  width: 800px;
-  height: 800px;
-  margin: auto;
+/*These next few blocks of code are for displaying the images on The Column homepage.
+The Image Border class is for displaying an organized grid layout for photos, and the 
+Homepage Photos class is for displaying the actual images on the page, along with the 
+title and description.*/
+#imageborder{
+  grid-area: content;
   display: grid;
-  gap: 150px 2px;
-  align-items: center;
-  justify-items: center;
-  grid-template-columns: repeat(4, 200px);
-  grid-template-rows: repeat(4, 200px);
-  grid-auto-columns: repeat(4, 200px);
-  grid-auto-rows: repeat(4, 200px);
+  padding-top: .35em;
+  padding-bottom: .35em;
+  gap: .2rem .2rem;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 200px 200px 200px 200px;
+  grid-auto-rows: 1fr;
+  grid-auto-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
 }
 
-figcaption {
+@media screen and (max-width: 950px){
+  #imageborder {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 700px){
+  #imageborder {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 450px){
+  #imageborder {
+    grid-template-columns: 1fr;
+    grid-auto-columns: 1fr;
+  }
+}
+
+.HomepagePhotos{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+}
+
+.HomepagePhotos-image {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+div[class=HomepagePhotos] > img {
+  height: auto;
+  width: 100%
+}
+
+.HomepagePhotos-title {
+  color: rgb(0, 204, 255);
+  font-family: "CentaurLabelFont";
+  margin-bottom: .1rem;
+  margin-top: 0;
+  padding-top: .1rem; 
+}
+
+.HomepagePhotos-body {
+  grid-area: 2 / 1 / 3 / 2;
+  padding: .75rem;
+  background-color: white;
+  background-attachment: scroll;
+  border-radius: 0 0 .2rem .2rem;
+}
+
+div[class=HomepagePhotos-body] > a[class=HomepagePhotos-button] {
+  text-decoration: none;
+}
+
+.HomepagePhotos-text {
   font-family: "CentaurLabelFont";
   font-size: 20px;
-  text-align: center;  color :rgb(0, 0, 0);
+  text-align: center;  
+  color :rgb(0, 0, 0);
   text-shadow: -1px 0 rgb(76, 0, 255), 0 1px rgb(76, 0, 255), 1px 0 rgb(76, 0, 255), 0 -1px rgb(76, 0, 255);
   text-shadow: 1px 1px 2px black;
   clear: both;
