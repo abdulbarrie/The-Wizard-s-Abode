@@ -165,6 +165,9 @@ div[class=HomepagePhotos] > img {
 div[class=HomepagePhotos-body] > a[class=HomepagePhotos-button] {
   text-decoration: none;
 }
+div[class=HomepagePhotos-body] > a[class=HomepagePhotos-button] {
+  text-decoration: none;
+}
 
 .HomepagePhotos-text {
   font-family: "CentaurLabelFont";
