@@ -34,7 +34,7 @@ router.get('/post/:id(\\d+)', (req, res, next) => {
  db.execute(baseSQL,[postId]).then(([results, fields]) => {
    if (results && results.length) {
     let post = results[0];
-    res.render('imagepost', {currentPost: post});
+    res.render('individualpost',{currentPost: post});
    } else {
      req.flash('error','This is not the post you are looking for!');
      res.redirect('/');

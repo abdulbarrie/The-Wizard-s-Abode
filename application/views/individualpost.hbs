@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="public/css/form.css">
+    <title>Image of the Day - The Wizard's Abode</title>
+</head>
+
+<div class="WA-individualpost">
+    <div id="WA-postheader">
+        <h1 id="WA-posttitle">Post Title: {{currentPost.title}}</h1>
+    </div>
+
+        <div id="WA-postinfo">
+            <p id="WA-postauthor"><strong>Author:</strong> {{currentPost.username}}</p>
+            <p id="WA-postdate"><strong>Creation Time: </strong><time datetime="2021-02-28T23:13:45">{{currentPost.created}}</time></p>
+        </div>
+
+        <div id="WA-imageplacement">
+            <img id="WA-image" src="/{{currentPost.photopath}}">
+        </div>
+
+        <div id="WA-postdescription">
+            <p id="WA-description">{{currentPost.description}}</p>
+        </div>
+
+</div>
+</html>

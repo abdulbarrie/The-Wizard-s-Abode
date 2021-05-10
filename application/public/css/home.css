@@ -66,7 +66,8 @@ is located down below.*/
   display: flex;
   width: 1000px;
   height: 50px;
-  margin: 0px auto;
+  margin-left: auto;
+  margin-right: auto;
   justify-content: center;
   border-radius: 100px;
   background: blue;
@@ -198,6 +199,29 @@ div[class=HomepagePhotos-body] > a[class=HomepagePhotos-button] {
 .alert-success{
   color: rgb(0, 255, 0);
 }
+
+img[id="WA-image"] {
+  width: 50%;
+  height: 50%;
+}
+
+/*This block of code is for the search bar on my navigation bar.*/
+input[id="theabode-search"] { 
+    width: 100px;
+    border-radius: 100px;
+    font-family: "CentaurLabelFont";
+    font-size: 16px;
+    text-align: center;
+    background-color: white;
+    background-image: url("https://cdn.icon-icons.com/icons2/2566/PNG/512/search_icon_153438.png");    
+    background-size: 20% 65%;
+    background-position: 10px 8px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+   
+}
+
+
 
   /*
   */
