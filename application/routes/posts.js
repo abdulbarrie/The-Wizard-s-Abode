@@ -64,4 +64,41 @@ router.post('/createPost', uploader.single("newimage"),(req, res, next) => {
     })
 });
 
+//localhost:3000/posts/search?search=value
+router.get('/search', (req, res, next) => {
+    let searchTerm = req.query.search;
+    if (!searchTerm) {
+        res.send({
+            resultsStatus: "info",
+            message: "No search term given.",
+            results: []
+        })
+    } else {
+        let baseSQL = `SELECT id, title, description, thumbnail, concat_ws(' ', title, description) AS haystack FROM posts \
+        HAVING haystack like ?;`
+        let sqlReadySearchTerm = "%" + searchTerm + "%";
+        db.execute(baseSQL, [sqlReadySearchTerm])
+        .then(([results, fields]) => {
+            if (results && results.length) {
+                res.send({
+                    resultsStatus:"info",
+                    message: `${results.length} results found`,
+                    results: results
+                });
+            } else {
+                db.query('SELECT id, title, description, thumbnail, created FROM posts ORDER BY created DESC LIMIT 8',[])
+                .then(([results, fields]) => {
+                    res.send({
+                        resultsStatus:"info",
+                        message: "No results were found for your search. However, here's the 8 most recent magical posts " +  
+                        "from our fellow wizards.",
+                        results: results
+                    });
+                })
+            }
+        })
+        .catch((err) => next(err))
+    }
+});
+
 module.exports = router;
