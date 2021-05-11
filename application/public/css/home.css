@@ -193,7 +193,7 @@ div[class=HomepagePhotos-body] > a[class=HomepagePhotos-button] {
 }
 
 .alert-danger{
-  color:rgb(255, 0, 0)
+  color: rgb(255, 0, 0)
 }
 
 .alert-success{
@@ -211,17 +211,22 @@ input[id="theabode-search"] {
     border-radius: 100px;
     font-family: "CentaurLabelFont";
     font-size: 16px;
-    text-align: center;
-    background-color: white;
-    background-image: url("https://cdn.icon-icons.com/icons2/2566/PNG/512/search_icon_153438.png");    
-    background-size: 20% 65%;
-    background-position: 10px 8px; 
+    text-align: justify;
+    background-color: white; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
-   
 }
 
-
+#theabode-searchicon {
+  background-image: url("../css/fonts/search_icon_153438.png");
+  width: auto;
+  height: 50px;
+  background-size: 90% 50%;
+  background-position: 0px 5px; 
+  background-repeat: no-repeat;
+  padding: 15px 20px;
+  align-items: center;
+}
 
   /*
   */

@@ -1,14 +1,13 @@
 /*Sorry, I couldn't exactly figure out how to allow the page
  to submit when the right information (valid username/password, 
-matching password) was entered.*/
-
-
+matching password) was entered.
+EDIT: I actually got it to work. These next few blocks/functions
+of code is for my Form Validation, for when a user registers 
+a new account.*/
 
 var usernameInput = document.getElementById("username");
 var passwordInput = document.getElementById("password");
 var confirmPassword = document.getElementById("confirmpassword");
-
-
 
 function FormValidation() {
     if (!CheckUsername() || !CheckValidUsername() || !CheckPassword() || !MatchingPassword()){
@@ -73,21 +72,80 @@ function MatchingPassword() {
 
 }
 
-function setFlashMessageFadeOut() {
+/*This function is for setting the opacity and time for the 
+Flash Message which pops up to show users an alert.*/
+function setFlashMessageFadeOut(flashMessageElement) {
     setTimeout(() => {
         let currentOpacity = 1.0;
         let timer = setInterval(() => {
             if (currentOpacity < 0.05) {
                 clearInterval(timer);
-                flashElement.remove();
+                flashMessageElement.remove();
             }
             currentOpacity = currentOpacity - .05;
-            flashElement.style.opacity = currentOpacity;
+            flashMessageElement.style.opacity = currentOpacity;
         }, 50);
     }, 4000);
 }
 
+/*These next few blocks of code are for the front end of searching for
+posts for the website.*/
+
+function addFlashFromFrontEnd(message) {
+   let flashMessageDiv = document.createElement('div');
+   let innerFlashDiv = document.createElement('div');
+   let innerTextNode = document.createTextNode(message);
+   innerFlashDiv.appendChild(innerTextNode);
+   flashMessageDiv.appendChild(innerFlashDiv);
+   flashMessageDiv.setAttribute('id', 'flash-message');
+   innerFlashDiv.setAttribute('class', 'alert alert-info');
+   document.getElementsByTagName('body')[0].appendChild(flashMessageDiv);
+   setFlashMessageFadeOut(flashMessageDiv);
+}
+
+function createCard(postData){
+    return `<div id="post-${postData.id}" class="HomepagePhotos">
+    <img class="HomepagePhotos-image" src="${postData.thumbnail}" alt="Missing Image">
+    <div class="HomepagePhotos-body">
+        <p class="HomepagePhotos-title">${postData.title}</p>
+        <p class="HomepagePhotos-text">${postData.description}</p>
+        <a href="/post/${postData.id}" class="HomepagePhotos-button">Post Details</a>
+    </div>
+</div>`;
+}
+
+
+function executeSearch() {
+    let searchTerm = document.getElementById('theabode-search').value;
+    if (!searchTerm) {
+        location.replace('/');
+        return;
+    }
+    let mainContent = document.getElementById('imageborder');
+    let searchURL = `/posts/search?search=${searchTerm}`;
+    fetch(searchURL)
+    .then((data) => {
+        return data.json();
+    })
+    .then((data_json) => {
+        let newMainContentHTML ='';
+        data_json.results.forEach((row) => {
+            newMainContentHTML += createCard(row);
+        });
+        mainContent.innerHTML = newMainContentHTML;
+        if(data_json.message) {
+            addFlashFromFrontEnd(data_json.message);
+        }
+    })
+    .catch((err) => console.log(err));
+}
+
 let flashElement = document.getElementById('flash-message');
 if (flashElement) {
-    setFlashMessageFadeOut();
+    setFlashMessageFadeOut(flashElement);
+}
+
+let searchButton = document.getElementById('theabode-searchicon');
+if (searchButton) {
+    searchButton.onclick = executeSearch;
 }
