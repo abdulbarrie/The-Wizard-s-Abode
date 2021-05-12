@@ -8,6 +8,7 @@ var successPrint = require('../helpers/debug/debugprinters').successPrint;
 var sharp = require('sharp');
 var multer = require('multer');
 var crypto = require('crypto');
+var PostModel = require('../models/Posts');
 var PostError = require('../helpers/error/PostError');
 
 var storage = multer.diskStorage({
@@ -41,11 +42,11 @@ router.post('/createPost', uploader.single("newimage"),(req, res, next) => {
      */
 
     sharp(fileUploaded).resize(200).toFile(destinationOfThumbnail).then(() => {
-        let baseSQL = 'INSERT INTO posts (title, description, photopath, thumbnail, created, bw_userid) VALUE (?,?,?,?, now(),?);;';
-        return db.execute(baseSQL,[title, description, fileUploaded, destinationOfThumbnail, bw_userId]);
+        return PostModel.create(
+        title, description, fileUploaded, destinationOfThumbnail, bw_userId);
     })
-    .then(([results, fields]) => {
-        if(results && results.affectedRows) {
+    .then((postWasCreated) => {
+        if(postWasCreated) {
             req.flash('success', "Your post was created successfully!");
             res.redirect('/');
         } else {
@@ -65,39 +66,32 @@ router.post('/createPost', uploader.single("newimage"),(req, res, next) => {
 });
 
 //localhost:3000/posts/search?search=value
-router.get('/search', (req, res, next) => {
+router.get("/search", async (req, res, next) => {
+    try {
     let searchTerm = req.query.search;
     if (!searchTerm) {
         res.send({
-            resultsStatus: "info",
             message: "No search term given.",
             results: []
-        })
+        });
     } else {
-        let baseSQL = `SELECT id, title, description, thumbnail, concat_ws(' ', title, description) AS haystack FROM posts \
-        HAVING haystack like ?;`
-        let sqlReadySearchTerm = "%" + searchTerm + "%";
-        db.execute(baseSQL, [sqlReadySearchTerm])
-        .then(([results, fields]) => {
-            if (results && results.length) {
-                res.send({
-                    resultsStatus:"info",
-                    message: `${results.length} results found`,
-                    results: results
+        let results = await PostModel.search(searchTerm);   
+        if (results.length) {      
+            res.send({  
+                message: `${results.length} results found`,   
+                results: results,
                 });
             } else {
-                db.query('SELECT id, title, description, thumbnail, created FROM posts ORDER BY created DESC LIMIT 8',[])
-                .then(([results, fields]) => {
+                let results = await PostModel.getNRecentPosts(8);
                     res.send({
-                        resultsStatus:"info",
                         message: "No results were found for your search. However, here's the 8 most recent magical posts " +  
                         "from our fellow wizards.",
-                        results: results
+                        results: results,
                     });
-                })
+                }
             }
-        })
-        .catch((err) => next(err))
+        } catch (err) {
+         next(err);
     }
 });
 
