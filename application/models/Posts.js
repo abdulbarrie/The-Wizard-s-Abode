@@ -29,4 +29,16 @@ PostModel.getNRecentPosts = (numberOfPost) => {
     .catch((err) => Promise.reject(err));
 };
 
+PostModel.getPostById = (postId) => {
+    let baseSQL = `SELECT u.id, u.username, p.title, p.description, p.photopath, p.created \
+    FROM users u JOIN posts p ON u.id=bw_userid WHERE p.id=?;`;
+
+ 
+ return db.execute(baseSQL,[postId]).then(([results, fields]) => {
+    
+    return Promise.resolve(results);
+ })
+ .catch((err) => Promise.reject(err));
+};
+
 module.exports = PostModel;
