@@ -196,3 +196,24 @@ span {
   font-size: 20px;
   text-shadow: 1px 1px 1.5px black;
 }
+
+/*Update as of 5/12/2021: I decided to implement the "imageborder" from the home page onto 
+the individual posts.*/
+
+.WA-individualpostborder{
+  position: static;
+  display: flex;
+  width: 1000px;
+  height: 500px;
+  margin: 0px auto;
+  border: 1px solid black;
+  border-radius: 10px;
+  border-top: violet;
+  background: white;
+  filter: drop-shadow(0 0 0.2rem rgb(0, 0, 0));
+  align-items: flex-start;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

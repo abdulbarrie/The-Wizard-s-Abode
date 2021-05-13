@@ -17,6 +17,8 @@
             <p id="WA-postdate"><strong>Creation Time: </strong><time datetime="2021-02-28T23:13:45">{{currentPost.created}}</time></p>
         </div>
 
+    
+    <div class="WA-individualpostborder">
         <div id="WA-imageplacement">
             <img id="WA-image" src="/{{currentPost.photopath}}">
         </div>
@@ -25,5 +27,11 @@
             <p id="WA-description">{{currentPost.description}}</p>
         </div>
 
+        <div id="WA-addcomments">
+            <label for="description"></label>
+            <textarea id="individual-post-comments" name="description" placeholder="Add a new comment..." 
+            rows="5" cols="40" required></textarea>
+        </div>
+</div>
 </div>
 </html>
