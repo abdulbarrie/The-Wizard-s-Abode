@@ -28,4 +28,4 @@ CommentModel.getCommentsForPost = (postId) => {
     })
     .catch(err => Promise.reject(err));
 };
-module.exports = PostModel;
+module.exports = CommentModel;

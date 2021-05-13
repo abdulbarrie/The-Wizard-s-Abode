@@ -221,7 +221,6 @@ div[class=HomepagePhotos-body] > a[class=HomepagePhotos-button] {
 img[id="WA-image"] {
   width: auto;
   height: 281.5px;
-  margin: 0px 400px 0px 100px;
 }
 
 /*This block of code is for the search bar on my navigation bar.*/
@@ -247,14 +246,53 @@ input[id="theabode-search"] {
   align-items: center;
 }
 
-  /*
+  /*This section will be for the styling of my "Individual Posts" page, 
+  containing all the necessary blocks of code to implement this.
   */
 
-  textarea[id="individual-post-comments"] {
+ /*Update as of 5/12/2021: I decided to implement the "imageborder" from the home page onto 
+  the individual posts.*/
+
+.WA-individualpostborder{
+  position: static;
+  display: flex;
+  width: 1000px;
+  height: 500px;
+  margin: 0px auto;
+  border: 1px solid black;
+  border-radius: 10px;
+  border-top: violet;
+  background: white;
+  filter: drop-shadow(0 0 0.2rem rgb(0, 0, 0));
+  align-items: flex-start;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+div[id="WA-imageplacement"] {
+  width: 500px;
+  height: 281.5px;
+  margin: 0px 100px 0px -175px;
+}
+
+div[id="WA-addcomments"] {
+  margin: 0px 165px 0px -175px;
+}
+
+div[id="WA-postdescription"] {
+  display: block;
+  justify-content: center;
+  text-align: justify;
+  margin: 0px 400px 0px 100px;
+}
+
+textarea[id="individual-post-comments"] {
     position: relative;
     display: block;
     resize: vertical;
-    margin-left: auto;
+    margin-left: 95px;
     margin-right: -410px;
     font-family: "CentaurLabelFont";
     text-shadow: 0px 0px 1px black;
