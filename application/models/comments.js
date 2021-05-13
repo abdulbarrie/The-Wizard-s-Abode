@@ -3,7 +3,8 @@ const CommentModel = {};
 
 CommentModel.create = (userId, postId, comment) => {
     let baseSQL = `INSERT INTO comments (comment, bw_postid, bw_authorid) VALUES (?,?,?);`
-    return db.query(baseSQL, [comment, postId, userId])
+    return db
+    .query(baseSQL, [comment, postId, userId])
     .then(([results, fields]) => {
         if (results && results.affectedRows) {
             return Promise.resolve(results.insertId);
@@ -12,7 +13,7 @@ CommentModel.create = (userId, postId, comment) => {
 
         }
     })
-    .catch((err) = Promise.reject(err));
+    .catch((err) => Promise.reject(err));
 }
 
 CommentModel.getCommentsForPost = (postId) => {
