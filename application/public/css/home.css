@@ -113,6 +113,7 @@ laid on. Image Posts will function for displaying the grid for photos.*/
   background: white;
   filter: drop-shadow(0 0 0.2rem rgb(0, 0, 0));
   align-items: flex-start;
+  align-content: center;
   justify-content: center;
 }
 
@@ -150,10 +151,14 @@ laid on. Image Posts will function for displaying the grid for photos.*/
   }
 }
 
-.HomepagePhotos{
+.HomepagePhotos {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto;
+  max-width: 200px;
+  max-height: 375px;
+  min-width: 200px;
+  min-height: 375px;
 }
 
 .HomepagePhotos-image {
@@ -166,6 +171,7 @@ div[class=HomepagePhotos] > img {
   height: auto;
   width: 100%;
   filter: drop-shadow(0 0 0.2rem rgb(0, 0, 0));
+  margin: auto;
 }
 
 .HomepagePhotos-title {
@@ -194,6 +200,8 @@ div[class=HomepagePhotos-body] > a[class=HomepagePhotos-button] {
 .HomepagePhotos-text {
   font-family: "CentaurLabelFont";
   font-size: 20px;
+  max-width: 175px;
+  max-height: 50px;
   text-align: center;  
   color :rgb(0, 0, 0);
   text-shadow: -1px 0 rgb(76, 0, 255), 0 1px rgb(76, 0, 255), 1px 0 rgb(76, 0, 255), 0 -1px rgb(76, 0, 255);
@@ -201,6 +209,7 @@ div[class=HomepagePhotos-body] > a[class=HomepagePhotos-button] {
   clear: both;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /*The flash-message blocks of code is for showing the error or success message when a user logs in.*/
@@ -259,7 +268,8 @@ input[id="theabode-search"] {
   position: static;
   display: flex;
   width: 1000px;
-  height: 500px;
+  min-height: 500px;
+  height: auto;
   margin: 0px auto;
   border: 1px solid black;
   border-radius: 10px;

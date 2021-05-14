@@ -89,7 +89,7 @@ app.use((err, req, res, next) => {
 
 app.use((err, req, res, next) => {
     res.status(500);
-    res.send('something went wrong with the db')
+    res.send('something went wrong with the db');
 })
 
 module.exports = app;
