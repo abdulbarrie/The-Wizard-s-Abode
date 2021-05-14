@@ -20,18 +20,79 @@
     
     <div class="WA-individualpostborder">
         <div id="WA-imageplacement">
-            <img id="WA-image" src="/{{currentPost.photopath}}">
+            <img id="WA-image" src="/{{currentPost.photopath}}" alt="Uh oh, looks like this image is wearing an invisibility cloak!">
         </div>
 
         <div id="WA-postdescription">
             <p id="WA-description">{{currentPost.description}}</p>
         </div>
 
-        <div id="WA-addcomments">
-            <label for="description"></label>
-            <textarea id="individual-post-comments" name="description" placeholder="Add a new comment..." 
-            rows="5" cols="40" required></textarea>
+    
+    <div id="WA-comment-container">
+        <div id="WA-messages">
+            {{#each currentPost.comments}}
+                {{> comment this}}
+            {{/each}}
         </div>
+            <div id="WA-comment-box">
+                <label for="comments"></label>
+                <textarea id="individual-post-comments" name="comments" placeholder="Add a new comment..." 
+                rows="5" cols="40" required></textarea>
+                <button id="WA-comment-box-button" type="button">Submit Comment</button>
+                </svg></span>
+        </div>
+    </div>
 </div>
 </div>
-</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('span[class=date-posted]').forEach((postedDate) => {
+            postedDate.textContent = new Date(postedDate.textContent).toLocaleString();
+        });
+    });
+
+    function addMessage(data) {
+        let template = document.createElement('template');
+        template.innerHTML = `<div id="WA-message-${data.commentId}">
+            <strong class="author-text">@${data.username}</strong>
+            <span class="date-posted">${new Date().toLocaleString()}</span>
+            <div class="comment-text">${data.comment}}</div>
+            </div>
+        `;
+        document.getElementById('messages').firstChild.before(template.content.firstChild);
+    }
+
+    document.getElementById('WA-comment-box-button').onclick = (event => {
+        let commentText = document.getElementById('individual-post-comments').value;
+        let postId = document.location.pathname.match(/\d+/g).map(Number)[0];
+
+        if (!commentText) {
+            return;
+        }
+
+        let fetchOptions = {
+            method: "POST",
+            headers: {
+                "Content-Type":"Application/json"
+            },
+            body: JSON.stringify({
+                comment:commentText, postId,postId
+            })
+        }
+            fetch('/comments/create', fetchOptions)
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.code == 1) {
+                    addMessage(data)
+                } else {
+                    addFlashFromFrontEnd(data.message, data.status);
+                }
+            })
+            .catch(err => console.log(err));
+        }
+    )
+        
+    
+
+</script>

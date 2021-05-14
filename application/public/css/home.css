@@ -158,11 +158,14 @@ laid on. Image Posts will function for displaying the grid for photos.*/
 
 .HomepagePhotos-image {
   grid-area: 1 / 1 / 2 / 2;
+  display: inline-block;
+  background-position: 0px;
 }
 
 div[class=HomepagePhotos] > img {
   height: auto;
-  width: 100%
+  width: 100%;
+  filter: drop-shadow(0 0 0.2rem rgb(0, 0, 0));
 }
 
 .HomepagePhotos-title {
@@ -196,6 +199,8 @@ div[class=HomepagePhotos-body] > a[class=HomepagePhotos-button] {
   text-shadow: -1px 0 rgb(76, 0, 255), 0 1px rgb(76, 0, 255), 1px 0 rgb(76, 0, 255), 0 -1px rgb(76, 0, 255);
   text-shadow: 1px 1px 2px black;
   clear: both;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /*The flash-message blocks of code is for showing the error or success message when a user logs in.*/
@@ -218,10 +223,7 @@ div[class=HomepagePhotos-body] > a[class=HomepagePhotos-button] {
   color: rgb(0, 255, 0);
 }
 
-img[id="WA-image"] {
-  width: auto;
-  height: 281.5px;
-}
+
 
 /*This block of code is for the search bar on my navigation bar.*/
 input[id="theabode-search"] { 
@@ -271,32 +273,110 @@ input[id="theabode-search"] {
   flex-wrap: wrap;
 }
 
+
+
 div[id="WA-imageplacement"] {
-  width: 500px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  grid-area: photoinfo;
+  width: auto;
   height: 281.5px;
-  margin: 0px 100px 0px -175px;
 }
 
-div[id="WA-addcomments"] {
-  margin: 0px 165px 0px -175px;
+img[id="WA-image"] {
+  width: auto;
+  height: 281.5px;
+  filter: drop-shadow(0 0 0.2rem rgb(0, 0, 0));
+}
+
+div[id="WA-comment-container"] {
+  display: grid;
+  justify-self: stretch;
+  grid-area: comments;
+  grid-template-rows: auto 75px;
+  grid-template-columns: 1fr;
+  gap: .2rem;
+  grid-template-areas: 
+  "messages"
+  "WA-comment-box";
+  max-height: 80vh;
+  margin: 210px 0px 5px 100px;
+}
+
+#WA-messages {
+  grid-area: messages;
+  overflow-y: auto;
+  display: flex;
+  flex-flow: column-reverse nowrap;
+  scroll-behavior: smooth;
+  border: 1px solid #cccccc;
+  box-shadow: -2px 2px 4px 4px #e0e0e0;
+  border-radius: .35rem;
+  height: 100%;
+}
+
+.author-text {
+  grid-area: author;
+  justify-self: start;
+  color: blue;
+  font-family: "CentaurLabelFont";
+
+}
+
+.comment-text {
+  grid-area: comments;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 25px;
+  min-height: 25px;
+  font-family: "CentaurLabelFont";
+}
+
+.date-posted {
+  grid-area: created;
+  justify-self: end;
 }
 
 div[id="WA-postdescription"] {
+  position: absolute;
+  display: grid;
+  grid-template-rows: auto 75px;
+  grid-template-columns: 1fr;
+  gap: .2rem;
+}
+
+p[id="WA-description"] {
   display: block;
-  justify-content: center;
-  text-align: justify;
-  margin: 0px 400px 0px 100px;
+}
+
+div[id^=WA-message-] {
+  grid-area: messages;
+  overflow-y: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  scroll-behavior: smooth;
+  border: 1px solid #cccccc;
+  box-shadow: -2px 2px 4px 4px #e0e0e0;
+  border-radius: .35rem;
+  height: 100%;
 }
 
 textarea[id="individual-post-comments"] {
     position: relative;
     display: block;
-    resize: vertical;
-    margin-left: 95px;
-    margin-right: -410px;
+    resize: none;
     font-family: "CentaurLabelFont";
     text-shadow: 0px 0px 1px black;
     box-shadow: 0px 2px 2px rgb(0, 0, 0);
     align-content: center;
   }
     
+  span[class="date-posted"] {
+    display: block;
+    font-family: "CentaurLabelFont";
+    font-size: 15px;
+    text-align: left;
+    text-shadow: 1px 1px 1.5px black;
+  }
+  

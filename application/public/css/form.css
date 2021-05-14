@@ -181,7 +181,7 @@ p {
 }
 
 /*The image for "imagepost" contains a drop shadow and is centered on the page.*/
-img {
+img[id="WA-photooftheday"] {
   display: block;
   margin-left: auto;
   margin-right: auto;
