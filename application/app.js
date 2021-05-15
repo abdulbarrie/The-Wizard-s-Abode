@@ -28,7 +28,7 @@ app.engine(
         defaultLayout: "home",
         helpers: {
             emptyObject: (obj) => {
-                return !(obj.constuctor === Object && Object.keys(obj).length == 0);
+                return !(obj.constructor === Object && Object.keys(obj).length == 0);
             }
 
             /**

@@ -310,20 +310,19 @@ div[id="WA-comment-container"] {
   grid-template-areas: 
   "messages"
   "WA-comment-box";
-  max-height: 80vh;
-  margin: 210px 0px 5px 100px;
+  max-height: 500px;
+  margin: 0px 0px 0px 100px;
+  overflow-y: scroll;
 }
 
 #WA-messages {
   grid-area: messages;
-  overflow-y: auto;
   display: flex;
-  flex-flow: column-reverse nowrap;
+  flex-flow: column nowrap;
   scroll-behavior: smooth;
-  border: 1px solid #cccccc;
-  box-shadow: -2px 2px 4px 4px #e0e0e0;
-  border-radius: .35rem;
-  height: 100%;
+  box-shadow: -1px 1px 1px 1px black;
+  border-radius: .25rem;
+  min-width: 300px;
 }
 
 .author-text {
@@ -331,16 +330,18 @@ div[id="WA-comment-container"] {
   justify-self: start;
   color: blue;
   font-family: "CentaurLabelFont";
+  text-shadow: 0 0 black;
 
 }
 
 .comment-text {
   grid-area: comments;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-height: 25px;
-  min-height: 25px;
+  overflow-y: auto;
+  min-height: 40px;
+  max-height: 80px;
+  max-width: 300px;
   font-family: "CentaurLabelFont";
+  text-shadow: 0 0 black;
 }
 
 .date-posted {
@@ -366,10 +367,9 @@ div[id^=WA-message-] {
   display: flex;
   flex-flow: column nowrap;
   scroll-behavior: smooth;
-  border: 1px solid #cccccc;
-  box-shadow: -2px 2px 4px 4px #e0e0e0;
+  border: 0px solid black;
+  box-shadow: 0px 1px 1px 0px black;
   border-radius: .35rem;
-  height: 100%;
 }
 
 textarea[id="individual-post-comments"] {
