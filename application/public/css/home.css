@@ -41,14 +41,72 @@ img[id="WizardsAbodeLogo"] {
     filter: drop-shadow(0 0 0.2rem rgb(0, 0, 0));
   }
 
-  .WA-orb1 {
+  img[id="WizardsAbodeLogo"]:hover {
+    width: 330px;
+    height: 240px;
+    color: rgb(223, 41, 41);
+  }
+
+  /*To implement my cool feature where people can change the themes of my website,
+  I made four blocks of code that describes my orb buttons, which will hide when
+  a user doesn't hover on the Wizard's Abode logo.*/
+  .WA-orb1  {
     display: none;
   }
 
-  img[id="WizardsAbodeLogo"]:hover + .WA-orb1, .WA-orb1:hover {
+  .WA-orb2 {
+    display: none;
+  }
+
+  .WA-orb3 {
+    display: none;
+  }
+
+  .WA-orb4 {
+    display: none;
+  }
+
+  /*When a user hovers on the Wizard's Above cauldron, each of the four orbs will
+  appear - two on the left side and two on the right. They will each fade in
+  smoothly as well.*/
+  div[class="WA-logochangingthemes"]:hover > .WA-orb1 {
     display: inline-block;
-    margin-top: 5%;
-    animation: fadein 1s;
+    position: fixed;
+    top: 55px;
+    left: 750px;
+    right: auto;
+    bottom: auto;
+    animation: fadein 0.5s;
+  }
+
+  div[class="WA-logochangingthemes"]:hover > .WA-orb2 {
+    display: inline-block;
+    position: fixed;
+    top: 200px;
+    left: 750px;
+    right: auto;
+    bottom: auto;
+    animation: fadein 0.5s;
+  }
+
+  div[class="WA-logochangingthemes"]:hover > .WA-orb3 {
+    display: inline-block;
+    position: fixed;
+    top: 55px;
+    right: 750px;
+    left: auto;
+    bottom: auto;
+    animation: fadein 0.5s;
+  }
+
+  div[class="WA-logochangingthemes"]:hover > .WA-orb4 {
+    display: inline-block;
+    position: fixed;
+    top: 200px;
+    right: 750px;
+    left: auto;
+    bottom: auto;
+    animation: fadein 0.5s;
   }
 
   @keyframes fadein {
@@ -56,9 +114,34 @@ img[id="WizardsAbodeLogo"] {
         opacity:0;
     }
     to {
-        opacity:1;
+        opacity:0.5;
+    }
+    to {
+      opacity: 1;
     }
 }
+
+
+.WA-orb1:active {
+  background-color: chartreuse;
+}
+
+div[id="WA-searchbar"] {
+  display: none;
+}
+
+a[id="theabode-searchicon"]:active + div[id="WA-searchbar"] {
+  display: block;
+  width: 100px;
+  border-radius: 100px;
+  font-family: "CentaurLabelFont";
+  font-size: 16px;
+  text-align: justify;
+  background-color: white; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
+
 
 h1 {
     font-family: "AlegreyaHeaderFont";
@@ -263,18 +346,12 @@ div[class=HomepagePhotos-body] > a[class=HomepagePhotos-postdetails] {
 
 /*This block of code is for the search bar on my navigation bar.*/
 input[id="theabode-search"] { 
-    width: 100px;
-    border-radius: 100px;
-    font-family: "CentaurLabelFont";
-    font-size: 16px;
-    text-align: justify;
-    background-color: white; 
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
+    display: none;
 }
 
 #theabode-searchicon {
   background-image: url("../css/fonts/search_icon_153438.png");
+  background-color: none;
   width: auto;
   height: 20px;
   background-size: 90% 80%;

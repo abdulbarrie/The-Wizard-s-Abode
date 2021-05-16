@@ -145,7 +145,4 @@ if (flashElement) {
     setFlashMessageFadeOut(flashElement);
 }
 
-let searchButton = document.getElementById('theabode-searchicon');
-if (searchButton) {
-    searchButton.onclick = executeSearch;
-}
+
