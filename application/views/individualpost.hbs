@@ -12,10 +12,10 @@
         <h1 id="WA-posttitle">Post Title: {{currentPost.title}}</h1>
     </div>
 
-        <div id="WA-postinfo">
-            <p id="WA-postauthor"><strong>Author:</strong> {{currentPost.username}}</p>
-            <p id="WA-postdate"><strong>Creation Time: </strong><time datetime="2021-02-28T23:13:45">{{currentPost.created}}</time></p>
-        </div>
+    <div id="WA-postinfo">
+        <p id="WA-postauthor"><strong>Author:</strong> {{currentPost.username}}</p>
+        <p id="WA-postdate"><strong>Creation Time: </strong><time datetime="2021-02-28T23:13:45">{{currentPost.created}}</time></p>
+    </div>
 
     
     <div class="WA-individualpostborder">
@@ -34,15 +34,15 @@
                 {{> comment this}}
             {{/each}}
         </div>
-            <div id="WA-comment-box">
-                <label for="comments"></label>
-                <textarea id="individual-post-comments" name="comments" placeholder="Add a new comment..." 
-                rows="5" cols="40" required></textarea>
-                <button id="WA-comment-box-button" type="button">Submit Comment</button>
-                </svg></span>
+    </div>
+         
+        <div id="WA-comment-box">
+            <label for="comments"></label>
+            <textarea id="individual-post-comments" name="comments" placeholder="Add a new comment..." 
+            rows="5" cols="40" required></textarea>
+            <button id="WA-comment-box-button" type="button">Submit Comment</button>     
         </div>
     </div>
-</div>
 </div>
 
 <script>

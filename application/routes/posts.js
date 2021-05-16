@@ -47,7 +47,7 @@ router.post('/createPost', uploader.single("newimage"),(req, res, next) => {
     })
     .then((postWasCreated) => {
         if(postWasCreated) {
-            req.flash('success', "Your post was created successfully!");
+            req.flash('success', "The domain has obtained your post. Good work, wizard!");
             res.redirect('/');
         } else {
             throw new PostError('Post could not be created.', '/postimage', 200);
@@ -76,23 +76,27 @@ router.get("/search", async (req, res, next) => {
         });
     } else {
         let results = await PostModel.search(searchTerm);   
-        if (results.length) {      
+        if (results.length == 1) {      
             res.send({  
-                message: `${results.length} results found`,   
+                message: `${results.length} result found.`,   
                 results: results,
                 });
-            } else {
-                let results = await PostModel.getNRecentPosts(8);
-                    res.send({
-                        message: "No results were found for your search. However, here's the 8 most recent magical posts " +  
-                        "from our fellow wizards.",
-                        results: results,
-                    });
-                }
+        } else if (results.length > 1) {
+                res.send({  
+                message: `${results.length} results found.`,   
+                results: results,
+                });
+        } else {
+            let results = await PostModel.getNRecentPosts(8);
+                res.send({
+                    message: "No results were found for your search. However, here's the 8 most recent magical posts " +  
+                    "from our fellow wizards.",
+                    results: results,
+                });
             }
-        } catch (err) {
-         next(err);
-    }
-});
+        }
+    } catch (err) {
+        next(err);
+}});
 
 module.exports = router;

@@ -136,7 +136,7 @@ router.post('/login', (req, res, next) => {
       req.session.username = username;
       req.session.userId = loggedUserId;
       res.locals.logged = true;
-      req.flash('success','You have been successfully logged in!');
+      req.flash('success','Welcome back, sorcerer!');
       res.redirect('/');
     } else {
       throw new UserError("Invalid username and/or password!", "/login", 200);
@@ -164,6 +164,7 @@ router.post('/logout',(req, res, next) => {
       successPrint('Session was destroyed.');
       res.clearCookie('csld');
       res.json({status:"OK", message:"User is logged out."});
+      req.flash('success', 'I wish you good luck on your travels, young adventurer!');
     }
   })
 });
