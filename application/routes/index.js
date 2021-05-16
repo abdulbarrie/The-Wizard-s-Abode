@@ -27,7 +27,7 @@ router.get('/imagepost',(req, res, next) => {
 });
 
 router.get('/post/:id(\\d+)', getPostById, getCommentsByPostId, (req, res, next) => {
-    res.render('individualpost', {title: `Post ${req.params.id}`});
+    res.render('individualpost', {title: `Post ${req.params.id} - The Wizard's Abode`});
 });
 
 router.get('/post/help', (req, res, next) => {

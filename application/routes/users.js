@@ -53,7 +53,7 @@ router.post('/register', (req, res, next) => {
     );
    } else {
     successPrint("User.js --> User was created!!");
-    req.flash('success','User account has been made!');
+    req.flash('success','User account has been made! Welcome, new sorcerer!');
     res.redirect('/login');
    }
 

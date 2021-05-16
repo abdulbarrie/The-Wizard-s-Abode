@@ -41,6 +41,24 @@ img[id="WizardsAbodeLogo"] {
     filter: drop-shadow(0 0 0.2rem rgb(0, 0, 0));
   }
 
+  .WA-orb1 {
+    display: none;
+  }
+
+  img[id="WizardsAbodeLogo"]:hover + .WA-orb1 {
+    display: block;
+    animation: fadein 1s;
+  }
+
+  @keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
 h1 {
     font-family: "AlegreyaHeaderFont";
     font-size: 45px;
