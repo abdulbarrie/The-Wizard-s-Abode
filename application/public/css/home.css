@@ -45,8 +45,9 @@ img[id="WizardsAbodeLogo"] {
     display: none;
   }
 
-  img[id="WizardsAbodeLogo"]:hover + .WA-orb1 {
-    display: block;
+  img[id="WizardsAbodeLogo"]:hover + .WA-orb1, .WA-orb1:hover {
+    display: inline-block;
+    margin-top: 5%;
     animation: fadein 1s;
   }
 
