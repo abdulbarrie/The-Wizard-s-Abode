@@ -39,14 +39,18 @@ img[id="WizardsAbodeLogo"] {
     width: 330px;
     height: 240px;
     filter: drop-shadow(0 0 0.2rem rgb(0, 0, 0));
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
   }
 
-  img[id="WizardsAbodeLogo"]:hover {
-    width: 330px;
-    height: 240px;
-    color: rgb(223, 41, 41);
-  }
 
+
+  div[class="WA-logochangingthemes"] {
+    width: 1030px;
+    height: 290px;
+    margin: auto;
+  }
   /*To implement my cool feature where people can change the themes of my website,
   I made four blocks of code that describes my orb buttons, which will hide when
   a user doesn't hover on the Wizard's Abode logo.*/
@@ -66,47 +70,47 @@ img[id="WizardsAbodeLogo"] {
     display: none;
   }
 
-  /*When a user hovers on the Wizard's Above cauldron, each of the four orbs will
+  /*When a user hovers on the Wizard's Abode cauldron, each of the four orbs will
   appear - two on the left side and two on the right. They will each fade in
   smoothly as well.*/
   div[class="WA-logochangingthemes"]:hover > .WA-orb1 {
-    display: inline-block;
-    position: fixed;
-    top: 55px;
-    left: 750px;
-    right: auto;
-    bottom: auto;
+    display: block;
+    margin: 0px 35px 0px 320px;
+    width: 30px;
+    height: 20px;
     animation: fadein 0.5s;
   }
 
   div[class="WA-logochangingthemes"]:hover > .WA-orb2 {
-    display: inline-block;
-    position: fixed;
-    top: 200px;
-    left: 750px;
-    right: auto;
-    bottom: auto;
+    display: block;
+    margin: 220px 0px -240px 320px;
+    width: 30px;
+    height: 20px;
     animation: fadein 0.5s;
   }
 
   div[class="WA-logochangingthemes"]:hover > .WA-orb3 {
-    display: inline-block;
-    position: fixed;
-    top: 55px;
-    right: 750px;
-    left: auto;
-    bottom: auto;
+    display: block;
+    margin: -260px 35px 240px 640px;
+    width: 30px;
+    height: 20px;
     animation: fadein 0.5s;
   }
 
   div[class="WA-logochangingthemes"]:hover > .WA-orb4 {
-    display: inline-block;
-    position: fixed;
-    top: 200px;
-    right: 750px;
-    left: auto;
-    bottom: auto;
+    display: block;
+    margin: -25px 112px 5px 640px;
+    width: 30px;
+    height: 20px;
     animation: fadein 0.5s;
+  }
+
+  img[id="WizardsAbodeLogo"]:hover {
+    width: 330px;
+    height: 240px;
+    filter: drop-shadow(0 0 0.2rem rgba(3, 248, 228, 0.856));
+    animation-name: nudgelogo;
+    animation-timing-function: ease;
   }
 
   @keyframes fadein {
@@ -121,6 +125,12 @@ img[id="WizardsAbodeLogo"] {
     }
 }
 
+
+@keyframes nudgelogo {
+  0%   { transform: translateY(0); filter: drop-shadow(0 0 0.2rem rgba(3, 248, 228, 0.856));}
+  50%  { transform: translateY(-20px); filter: drop-shadow(0 0 0.2rem rgba(7, 3, 248, 0.856));}
+  100% { transform: translateY(0); filter: drop-shadow(0 0 0.2rem rgba(191, 3, 248, 0.712));}
+}
 
 .WA-orb1:active {
   background-color: chartreuse;
