@@ -128,7 +128,7 @@ function createCard(postData){
 function executeSearch() {
     let searchTerm = document.getElementById('theabode-search').value;
     if (!searchTerm) {
-        location.replace('/');
+        addFlashFromFrontEnd('Your search term seems to have drunk an invisibility potion...')
         return;
     }
     let mainContent = document.getElementById('imageborder');

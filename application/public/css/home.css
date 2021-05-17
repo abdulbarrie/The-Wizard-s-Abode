@@ -58,28 +58,28 @@ img[id="WizardsAbodeLogo"] {
   I made four blocks of code that describe my orb buttons, which will hide when
   a user doesn't hover on the Wizard's Abode logo.*/
   .WA-orb1  {
-    display: block;
+    display: none;
     margin: 0px 35px 0px 320px;
     width: 30px;
     height: 20px;
   }
 
   .WA-orb2 {
-    display: block;
+    display: none;
     margin: 220px 0px -240px 320px;
     width: 30px;
     height: 20px;
   }
 
   .WA-orb3 {
-    display: block;
+    display: none;
     margin: -260px 35px 240px 640px;
     width: 30px;
     height: 20px;
   }
 
   .WA-orb4 {
-    display: block;
+    display: none;
     margin: -25px 112px 5px 640px;
     width: 30px;
     height: 20px;
@@ -349,6 +349,7 @@ div[class=HomepagePhotos-body] > a[class=HomepagePhotos-postdetails] {
   text-align: center;
   font-family: "CentaurLabelFont";
   font-size: 30px;
+  color: rgb(0, 175, 255);
   text-shadow: 1px 1px 2px black;
 }
 
