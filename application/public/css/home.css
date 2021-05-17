@@ -391,7 +391,7 @@ input[id="theabode-search"] {
 
 div[id="WA-searchbar"] {
   display: block;
-  position: fixed;
+  position: relative;
 }
 
 div[id="WA-dropdownsearchbar"] {
@@ -401,6 +401,9 @@ div[id="WA-dropdownsearchbar"] {
   margin: 20px auto;
 }
 
+#WA-dropdownsearchbar + #theabode-searchicon {
+  animation: fadein 0.5s;
+}
 
 
   /*This section will be for the styling of my "Individual Posts" page, 
