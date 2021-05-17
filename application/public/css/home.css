@@ -374,6 +374,7 @@ input[id="theabode-search"] {
   background-color: white; 
   background-repeat: no-repeat;
   padding: 15px 12px 15px 12px;
+  filter: drop-shadow(0px 1px 5px black);
 }
 
 #theabode-searchicon {
@@ -417,7 +418,7 @@ div[id="WA-dropdownsearchbar"] {
   position: static;
   display: flex;
   width: 1000px;
-  min-height: 500px;
+  min-height: 575px;
   height: auto;
   margin: 0px auto;
   border: 1px solid black;
@@ -442,7 +443,7 @@ div[id="WA-imageplacement"] {
   max-width: 960px;
   height: 288px;
   margin-top: 120px;
-  margin-left: initial;
+  margin-left: 10px;
 }
 
 /*This block is for sizing the image so that it maintains its aspect ratio.
@@ -451,18 +452,25 @@ img[id="WA-image"] {
   width: auto;
   height: 288px;
   filter: drop-shadow(0 0 0.2rem rgb(0, 0, 0));
+  margin: auto;
 }
 
 div[id="WA-postdescription"] {
   position: absolute;
-  display: grid;
-  grid-template-rows: auto 75px;
-  grid-template-columns: 1fr;
-  gap: .2rem;
+  display: flex;
+  width: auto;
+  height: auto;
+  margin: 440px 0px 0px -400px;
+  align-content: center;
+  justify-content: space-evenly;
 }
 
 p[id="WA-description"] {
   display: block;
+  width: 500px;
+  height: 100px;
+  margin: auto;
+  overflow: auto;
 }
 
 
@@ -560,7 +568,7 @@ block of code below defines how the text looks when commenting,
 its black text shadow and box shadow, and its inability to 
 resize.*/
 div[id="WA-comment-box"] {
-  margin: 0px 0px 0px 510px;
+  margin: 0px 0px 0px 555px;
 }
 
 textarea[id="individual-post-comments"] {

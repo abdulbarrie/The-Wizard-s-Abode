@@ -8,10 +8,10 @@ a new account.*/
 
 function searchBar() {
     var x = document.getElementById("WA-dropdownsearchbar");
-    if (x.style.display == "none") {
-      x.style.display = "block";
-    } else {
+    if (x.style.display == "block") {
       x.style.display = "none";
+    } else {
+      x.style.display = "block";
     }
   }
 
@@ -154,5 +154,12 @@ let flashElement = document.getElementById('flash-message');
 if (flashElement) {
     setFlashMessageFadeOut(flashElement);
 }
+
+let searchButton = document.getElementById('theabode-search');
+searchButton.addEventListener("keyup", ({key}) => {
+    if (key === "Enter") {
+        executeSearch();
+   }
+})
 
 
