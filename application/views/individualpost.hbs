@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="public/css/form.css">
+
     <title>{{currentPost.title}} - The Wizard's Abode</title>
 </head>
 
@@ -27,12 +27,14 @@
             <p id="WA-description">{{currentPost.description}}</p>
         </div>
 
-    
-    <div id="WA-comment-container">
-        <div id="WA-messages">
-            {{#each currentPost.comments}}
-                {{> comment this}}
-            {{/each}}
+
+    <div class="WA-comment-section">
+        <div id="WA-comment-container">
+            <div id="WA-messages">
+                {{#each currentPost.comments}}
+                    {{> comment this}}
+                {{/each}}
+            </div>
         </div>
     </div>
          
@@ -60,7 +62,7 @@
             <div class="comment-text">${data.comment}}</div>
             </div>
         `;
-        document.getElementById('messages').firstChild.before(template.content.firstChild);
+        document.getElementById('WA-messages').firstChild.before(template.content.firstChild);
     }
 
     document.getElementById('WA-comment-box-button').onclick = (event => {
@@ -89,7 +91,7 @@
                     addFlashFromFrontEnd(data.message, data.status);
                 }
             })
-            .catch(err => console.log(err));
+            .catch((err) => console.log(err));
         }
     )
         

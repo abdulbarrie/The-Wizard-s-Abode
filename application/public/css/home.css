@@ -90,7 +90,7 @@ img[id="WizardsAbodeLogo"] {
   smoothly as well.*/
   div[class="WA-logochangingthemes"]:hover > .WA-orb1 {
     display: block;
-    margin: 0px 35px 0px 320px;
+    margin: 0px 35px 0px 300px;
     width: 30px;
     height: 20px;
     animation: fadein 0.5s;
@@ -98,7 +98,7 @@ img[id="WizardsAbodeLogo"] {
 
   div[class="WA-logochangingthemes"]:hover > .WA-orb2 {
     display: block;
-    margin: 220px 0px -240px 320px;
+    margin: 220px 0px -240px 300px;
     width: 30px;
     height: 20px;
     animation: fadein 0.5s;
@@ -106,7 +106,7 @@ img[id="WizardsAbodeLogo"] {
 
   div[class="WA-logochangingthemes"]:hover > .WA-orb3 {
     display: block;
-    margin: -260px 35px 240px 640px;
+    margin: -265px 35px 240px 680px;
     width: 30px;
     height: 20px;
     animation: fadein 0.5s;
@@ -114,7 +114,7 @@ img[id="WizardsAbodeLogo"] {
 
   div[class="WA-logochangingthemes"]:hover > .WA-orb4 {
     display: block;
-    margin: -25px 112px 5px 640px;
+    margin: -20px 110px 5px 680px;
     width: 30px;
     height: 20px;
     animation: fadein 0.5s;
@@ -321,7 +321,7 @@ div[class=HomepagePhotos-body] > a[class=HomepagePhotos-postdetails] {
   text-decoration: none;
 }
 
-div[class=HomepagePhotos-body] > a[class=HomepagePhotos-postdetails] {
+div[class=HomepagePhotos-body] > a[class=HomepagePhotos-button] {
   text-decoration: none;
 }
 
@@ -343,6 +343,7 @@ div[class=HomepagePhotos-body] > a[class=HomepagePhotos-postdetails] {
 /*The flash-message blocks of code is for showing the error or success message when a user logs in.*/
 #flash-message {
   position: relative;
+  margin: auto;
 }
 
 #flash-message div {
@@ -354,7 +355,7 @@ div[class=HomepagePhotos-body] > a[class=HomepagePhotos-postdetails] {
 }
 
 .alert-danger{
-  color: rgb(255, 0, 0)
+  color: rgb(255, 0, 0);
 }
 
 .alert-success{
@@ -441,10 +442,11 @@ div[id="WA-imageplacement"] {
   flex-direction: column;
   flex-wrap: wrap;
   grid-area: photoinfo;
+  width: 512px;
   max-width: 960px;
   height: 288px;
-  margin-top: 120px;
-  margin-left: 10px;
+  margin-top: 80px;
+  margin-left: 25px;
 }
 
 /*This block is for sizing the image so that it maintains its aspect ratio.
@@ -468,17 +470,21 @@ div[id="WA-postdescription"] {
 
 p[id="WA-description"] {
   display: block;
-  width: 500px;
+  width: 400px;
   height: 100px;
   margin: auto;
   overflow: auto;
+  text-align: center;
 }
 
 
 /*These next few blocks will serve as my design for the comment section.
 First, I have a comment container which will be aligned to the right of
 each image (like on Instagram) and scroll vertically if multiple comments
-display at a time.*/
+display at a time.
+EDIT 5/17/2021: I removed the overflow-y property and added it to my "WA-
+comment-section" div. That way, only one scroll bar shows up at a time 
+(at least until someone posts a long comment).*/
 div[id="WA-comment-container"] {
   display: grid;
   justify-self: stretch;
@@ -491,11 +497,10 @@ div[id="WA-comment-container"] {
   "WA-comment-box";
   max-height: 500px;
   margin: 0px 0px 0px 100px;
-  overflow-y: scroll;
 }
 
 /*Next, this block of code defines the styling and position for all of
-the comments*/
+the comments.*/
 #WA-messages {
   grid-area: messages;
   display: flex;
@@ -504,6 +509,11 @@ the comments*/
   box-shadow: -1px 1px 1px 1px black;
   border-radius: .25rem;
   min-width: 300px;
+}
+
+a[id="WA-comment-title"] {
+  color: rgb(0, 204, 255);
+
 }
 
 /*This block of code describes each individual comment post, 
@@ -580,7 +590,18 @@ textarea[id="individual-post-comments"] {
   text-shadow: 0px 0px 1px black;
   box-shadow: 0px 2px 2px rgb(0, 0, 0);
 }
-    
+  
+
+/* And finally, I added a div container for my comment section in
+general. I realized I had problems aligning my images and comments
+in a consistent manner, so placing the comment container
+into a comment section really helped.*/
+div[class="WA-comment-section"] {
+  margin: auto;
+  max-width: 440px;
+  max-height: 350px;
+  overflow-y: scroll;
+}
 
 /*This is the end of my CSS file for the Home page.
 :)*/ 
