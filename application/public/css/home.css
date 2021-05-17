@@ -1,5 +1,6 @@
-
-/* For the style of the Home.html document, I will use a similar aesthetic to the one established
+/* This file describes all of my styling for The Wizard's Abode, including the Wizard's Column,
+the individual posts, and the search bar and navigation bar among other things.
+ For the style of the Home.html document, I will use a similar aesthetic to the one established
 on the Form.css file, in that the Alegreya/Centaur font, background image and color scheme will be similar.
 As such, the next few blocks of code will be identical to the one on my Form file.*/
 @font-face {
@@ -34,7 +35,9 @@ body {
 
 /*This is the code for my hand-drawn and digitally edited logo, with a width of 330px 
 and a height of 240px. I added 10 pixels to the width so that the text could be a bit 
-more stretched out and readable.*/
+more stretched out and readable.
+5/16/2021 Edit: I also added a feature so that the logo can glow and pulsate when hovering
+above it. This feature works in tandem with my theme appearance buttons, located down below.*/
 img[id="WizardsAbodeLogo"] {
     width: 330px;
     height: 240px;
@@ -45,29 +48,41 @@ img[id="WizardsAbodeLogo"] {
   }
 
 
-
   div[class="WA-logochangingthemes"] {
     width: 1030px;
     height: 290px;
     margin: auto;
   }
+  
   /*To implement my cool feature where people can change the themes of my website,
-  I made four blocks of code that describes my orb buttons, which will hide when
+  I made four blocks of code that describe my orb buttons, which will hide when
   a user doesn't hover on the Wizard's Abode logo.*/
   .WA-orb1  {
-    display: none;
+    display: block;
+    margin: 0px 35px 0px 320px;
+    width: 30px;
+    height: 20px;
   }
 
   .WA-orb2 {
-    display: none;
+    display: block;
+    margin: 220px 0px -240px 320px;
+    width: 30px;
+    height: 20px;
   }
 
   .WA-orb3 {
-    display: none;
+    display: block;
+    margin: -260px 35px 240px 640px;
+    width: 30px;
+    height: 20px;
   }
 
   .WA-orb4 {
-    display: none;
+    display: block;
+    margin: -25px 112px 5px 640px;
+    width: 30px;
+    height: 20px;
   }
 
   /*When a user hovers on the Wizard's Abode cauldron, each of the four orbs will
@@ -118,38 +133,24 @@ img[id="WizardsAbodeLogo"] {
         opacity:0;
     }
     to {
-        opacity:0.5;
+        opacity: 0.5;
     }
     to {
-      opacity: 1;
+        opacity: 1;
     }
 }
 
 
 @keyframes nudgelogo {
   0%   { transform: translateY(0); filter: drop-shadow(0 0 0.2rem rgba(3, 248, 228, 0.856));}
-  50%  { transform: translateY(-20px); filter: drop-shadow(0 0 0.2rem rgba(7, 3, 248, 0.856));}
-  100% { transform: translateY(0); filter: drop-shadow(0 0 0.2rem rgba(191, 3, 248, 0.712));}
+  25%  { filter: drop-shadow(0 0 0.2rem rgba(7, 3, 248, 0.856));}
+  50%  { transform: translateY(-5px); filter: drop-shadow(0 0 0.2rem rgba(191, 3, 248, 0.712));}
+  75%  { filter: drop-shadow(0 0 0.2rem rgba(7, 3, 248, 0.856));}
+  100% { transform: translateY(5px); filter: drop-shadow(0 0 0.2rem rgba(3, 248, 228, 0.856));}
 }
 
 .WA-orb1:active {
   background-color: chartreuse;
-}
-
-div[id="WA-searchbar"] {
-  display: none;
-}
-
-a[id="theabode-searchicon"]:active + div[id="WA-searchbar"] {
-  display: block;
-  width: 100px;
-  border-radius: 100px;
-  font-family: "CentaurLabelFont";
-  font-size: 16px;
-  text-align: justify;
-  background-color: white; 
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
 }
 
 
@@ -172,7 +173,7 @@ h1[id="number-of-photos"] {
 
 /*This wrapper tag is for the navigation bar, which will feature buttons 
 that take the user to different portions of the website. The button styling 
-is located down below.*/
+for each icon is located down below.*/
 #wrapper {
   position: relative;
   display: flex;
@@ -205,6 +206,13 @@ is located down below.*/
   background-color: purple;
   color: black;
 }
+
+#theabode-searchicon:hover {
+  background-color: purple;
+}
+
+
+
 
 /*These next few blocks of code are for displaying the images on The Column homepage.
 The Image Border class is for displaying an organized grid layout for photos, and the 
@@ -354,22 +362,46 @@ div[class=HomepagePhotos-body] > a[class=HomepagePhotos-postdetails] {
 
 
 
-/*This block of code is for the search bar on my navigation bar.*/
+/*These blocks of code are for the search bar on my website. It will appear 
+only when a user clicks on the search button near the navigation bar.*/
 input[id="theabode-search"] { 
-    display: none;
+  width: 300px;
+  height: auto;
+  border-radius: 100px;
+  font-family: "CentaurLabelFont";
+  font-size: 20px;
+  text-align: center;
+  background-color: white; 
+  background-repeat: no-repeat;
+  padding: 15px 12px 15px 12px;
 }
 
 #theabode-searchicon {
   background-image: url("../css/fonts/search_icon_153438.png");
-  background-color: none;
+  background-color: blue;
   width: auto;
-  height: 20px;
+  height: 50px;
   background-size: 90% 80%;
   background-position: 3px 5px; 
   background-repeat: no-repeat;
   padding: 15px 20px;
   align-items: center;
 }
+
+
+div[id="WA-searchbar"] {
+  display: block;
+  position: fixed;
+}
+
+div[id="WA-dropdownsearchbar"] {
+  display: none;
+  width: 300px;
+  height: 40px;
+  margin: 20px auto;
+}
+
+
 
   /*This section will be for the styling of my "Individual Posts" page, 
   containing all the necessary blocks of code to implement this.
@@ -537,3 +569,6 @@ textarea[id="individual-post-comments"] {
   box-shadow: 0px 2px 2px rgb(0, 0, 0);
 }
     
+
+/*This is the end of my CSS file for the Home page.
+:)*/ 

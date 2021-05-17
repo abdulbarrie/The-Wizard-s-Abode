@@ -1,5 +1,6 @@
-
-/* "Font-face" is used here so that I can import my downloaded fonts to the file. 
+/* This page describes the styling for my Registration and Login forms. It was 
+the first CSS file I made before working on the rest of my website.
+"Font-face" is used here so that I can import my downloaded fonts to the file. 
 Alegreya will be used for the main header, while Centaur will be for other miscellaneous text.*/
 @font-face {
     font-family: "AlegreyaHeaderFont";

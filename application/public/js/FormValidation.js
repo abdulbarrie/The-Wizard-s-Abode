@@ -5,6 +5,16 @@ EDIT: I actually got it to work. These next few blocks/functions
 of code is for my Form Validation, for when a user registers 
 a new account.*/
 
+
+function searchBar() {
+    var x = document.getElementById("WA-dropdownsearchbar");
+    if (x.style.display == "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+
 var usernameInput = document.getElementById("username");
 var passwordInput = document.getElementById("password");
 var confirmPassword = document.getElementById("confirmpassword");
