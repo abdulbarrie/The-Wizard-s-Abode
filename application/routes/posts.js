@@ -4,7 +4,6 @@ var db = require('../conf/database');
 /**If something goes wrong with this file, check these two lines of 
  * code and replace them with what the professor wrote. */
 var errorPrint = require('../helpers/debug/debugprinters').errorPrint;
-var successPrint = require('../helpers/debug/debugprinters').successPrint;
 var sharp = require('sharp');
 var multer = require('multer');
 var crypto = require('crypto');

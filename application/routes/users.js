@@ -17,6 +17,7 @@ router.post('/register', (req, res, next) => {
   /**
    * do server side validation
    * not done in video must do on your own
+   * 
    */
 
   UserModel.usernameExists(username)

@@ -162,8 +162,8 @@ function createCard(postData){
     <img class="HomepagePhotos-image" src="${postData.thumbnail}" alt="Missing Image">
     <div class="HomepagePhotos-body">
         <p class="HomepagePhotos-title">${postData.title}</p>
-        <p class="HomepagePhotos-text">${postData.description}</p>
-        <a href="/post/${postData.id}" class="HomepagePhotos-button">Post Details</a>
+        <p class="HomepagePhotos-description">${postData.description}</p>
+        <a href="/post/${postData.id}" class="HomepagePhotos-postdetails">Post Details</a>
     </div>
 </div>`;
 }
@@ -175,7 +175,7 @@ function executeSearch() {
         addFlashFromFrontEnd('Your search term seems to have drunk an invisibility potion...')
         return;
     }
-    let mainContent = document.getElementById('imageborder');
+    let mainContent = document.getElementById('imageposts');
     let searchURL = `/posts/search?search=${searchTerm}`;
     fetch(searchURL)
     .then((data) => {
