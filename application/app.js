@@ -13,8 +13,6 @@ var usersRouter = require('./routes/users');
 var postsRouter = require('./routes/posts');
 var commentRouter = require('./routes/comments');
 var dbRouter = require('./routes/dbtest');
-var errorPrint = require('./helpers/debug/debugprinters').errorPrint;
-var successPrint = require('./helpers/debug/debugprinters').successPrint;
 var requestPrint = require('./helpers/debug/debugprinters').requestPrint;
 
 var app = express();

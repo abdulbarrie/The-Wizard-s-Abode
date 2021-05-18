@@ -27,7 +27,7 @@ body {
     height: 1080px;
     position: relative;
     margin: auto;
-    background-image: url("../css/fonts/The\ Wizard\'s\ Abode\ Background\ Image\ \(Newest\ Version\ 4\).png");
+    background-image: url("./fonts/The Wizards Abode Background Image (Newest Version 1).png");
     background-attachment: scroll;
     background-position: 50% 0%;
     background-repeat: no-repeat;
@@ -289,7 +289,7 @@ laid on. Image Posts will function for displaying the grid for photos.*/
 }
 
 div[class=HomepagePhotos] > img {
-  min-width: 200px;
+  width: auto;
   max-width: 200px;
   min-height: 150px;
   max-height: 150px;
