@@ -163,3 +163,29 @@ searchButton.addEventListener("keyup", ({key}) => {
 })
 
 
+/**This is where my functions to change the theme of my website will be.
+ * As stated, I made four glowing orbs along with four background images
+ * that will display when a user clicks one of the orbs. If the user 
+ * chooses Orb 1 (red and orange), the theme will change to my red and
+ * orange background image. If the user chooses Orb 2 (green and yellow),
+ * the theme will change to my green and yellow background image and so on.
+ */
+
+function backgroundOrb1() {
+    document.body.style.backgroundImage = "url('https://na.finalfantasyxvi.com/assets/images/na/kv/kv_pc.jpg')";
+ }
+
+ function backgroundOrb2() {
+    document.body.style.backgroundImage = "url('The\ Wizard\'s\ Abode\ Background\ Image\ \(Newest\ Version\ 1\).png')";
+ }
+
+ function backgroundOrb3() {
+    document.body.style.backgroundImage = "url('/fonts/The\ Wizard\'s\ Abode\ Background\ Image\ \(Newest\ Version\ 2\).png')";
+ }
+
+ function backgroundOrb4() {
+    document.body.style.backgroundImage = "url('/fonts/The\ Wizard\'s\ Abode\ Background\ Image\ \(Newest\ Version\ 1\).png')";
+ }
+
+
+ 

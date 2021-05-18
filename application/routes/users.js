@@ -133,10 +133,10 @@ router.post('/login', (req, res, next) => {
   .then((loggedUserId) => {
     if (loggedUserId > 0) {
       successPrint(`User ${username} is logged in`);
+      req.flash('success','Welcome back, sorcerer!');
       req.session.username = username;
       req.session.userId = loggedUserId;
       res.locals.logged = true;
-      req.flash('success','Welcome back, sorcerer!');
       res.redirect('/');
     } else {
       throw new UserError("Invalid username and/or password!", "/login", 200);
