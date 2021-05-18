@@ -17,11 +17,13 @@
 
         <label for="title">Title of your post:</label>
         <input id="posttitle" type="text" name="title" required>
+        <span id='title-message'></span>
 
         <br>
 
         <label for="description">Description:</label>
         <textarea id="description" name="description" rows="10" cols="60" required></textarea>
+        <span id='description-message'></span>
 
         <br>
 
@@ -30,8 +32,8 @@
             <label for="acceptableuse">By clicking this box, I verify that I agree with the Acceptable Use Policy.</label>
         </div>
 
-        <input type="submit" value="Post Image">
+        <input type="submit" value="Post Image" onclick="return ImageValidation();">
 
     </form>
-    
+    <script defer type="text/javascript" src="public/js/FormValidation.js"></script>
 </html>

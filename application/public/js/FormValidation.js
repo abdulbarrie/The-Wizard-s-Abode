@@ -79,7 +79,51 @@ function MatchingPassword() {
         document.getElementById('match-message').innerHTML = 'Error: Passwords do not match.';
         return false;
     }
+}
 
+
+
+/*These next few functions are for my Image Validation for 
+when a user posts a new image. */
+
+
+var titleInput = document.getElementById("posttitle");
+var descriptionInput = document.getElementById("description");
+
+
+function ImageValidation() {
+    if (!CheckTitle() || !CheckDescription()){
+        return false;
+    } else {
+        return true;
+  }
+}
+
+function CheckTitle() {
+    var actualTitle = /^[A-Za-z][A-Za-z0-9]+$/;
+    if (titleInput.value.match(actualTitle)) {
+        document.getElementById('title-message').style.color = 'green';
+        document.getElementById('title-message').innerHTML = 'Decent title';
+        return true;
+    } else if (!titleInput.value.match(actualTitle)) {    
+        document.getElementById('title-message').style.color = 'red';
+        document.getElementById('title-message').innerHTML = 'Error: Must enter a title for your post.';
+        return false;
+    }
+}
+
+
+function CheckDescription() {
+    var actualDescription = /^[A-Za-z][A-Za-z0-9]+$/;
+    if (descriptionInput.value.match(actualDescription)) {
+        document.getElementById('description-message').style.color = 'green';
+        document.getElementById('description-message').innerHTML = 'Decent title';
+        return true;
+    } else if (!descriptionInput.value.match(actualDescription)) {    
+        document.getElementById('description-message').style.color = 'red';
+        document.getElementById('description-message').innerHTML = 'Error: Must enter a description for your post.';
+        return false;
+    }
 }
 
 /*This function is for setting the opacity and time for the 
@@ -161,6 +205,7 @@ searchButton.addEventListener("keyup", ({key}) => {
         executeSearch();
    }
 })
+
 
 
 /**This is where my functions to change the theme of my website will be.
