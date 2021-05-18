@@ -60,31 +60,52 @@ img[id="WizardsAbodeLogo"] {
   a user doesn't hover on the Wizard's Abode logo.*/
   #WA-orb1  {
     display: none;
-    margin: 0px 35px 0px 320px;
-    width: 30px;
+    margin: 0px 35px 0px 280px;
+    background-image: url("../css/fonts/Glowing\ Orb\ 1.png");
+    width: 20px;
     height: 20px;
+    background-size: 140% 140%;
+    background-position: -3px -3px;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+
   }
 
 
   #WA-orb2 {
     display: none;
-    margin: 220px 0px -240px 320px;
-    width: 30px;
+    margin: 220px 0px -240px 280px;
+   
+    width: 20px;
     height: 20px;
+    background-size: 140% 140%;
+    background-position: -3px -3px;
+    background-repeat: no-repeat;
+    border-radius: 50%;
   }
 
   #WA-orb3 {
     display: none;
-    margin: -260px 35px 240px 640px;
-    width: 30px;
+    margin: -265px 35px 240px 700px;
+    background-image: url("../css/fonts/Glowing\ Orb\ 3.png");
+    width: 20px;
     height: 20px;
+    background-size: 140% 140%;
+    background-position: -3px -3px;
+    background-repeat: no-repeat;
+    border-radius: 50%;
   }
 
   #WA-orb4 {
     display: none;
-    margin: -25px 112px 5px 640px;
-    width: 30px;
+    margin: -20px 110px 5px 700px;
+    background-image: url("../css/fonts/Glowing\ Orb\ 4.png");
+    width: 20px;
     height: 20px;
+    background-size: 140% 140%;
+    background-position: -3px -3px;
+    background-repeat: no-repeat;
+    border-radius: 50%;
   }
 
   /*When a user hovers on the Wizard's Abode cauldron, each of the four orbs will
@@ -92,33 +113,58 @@ img[id="WizardsAbodeLogo"] {
   smoothly as well.*/
   div[class="WA-logochangingthemes"]:hover > #WA-orb1 {
     display: block;
-    margin: 0px 35px 0px 300px;
-    width: 30px;
+    background-image: url("../css/fonts/Glowing\ Orb\ 1.png");
+    margin: 45px 65px -140px 200px;
+    width: 20px;
     height: 20px;
+    background-size: 140% 140%;
+    background-position: -3px -3px; 
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    filter: drop-shadow(black);
     animation: fadein 0.5s;
+
   }
 
   div[class="WA-logochangingthemes"]:hover > #WA-orb2 {
     display: block;
-    margin: 220px 0px -240px 300px;
-    width: 30px;
+    background-image: url("../css/fonts/Glowing\ Orb\ 2.png");
+    margin: 120px 35px 0px 280px;
+    width: 20px;
     height: 20px;
+    background-size: 140% 140%;
+    background-position: -3px -3px; 
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    filter: drop-shadow(black);
     animation: fadein 0.5s;
   }
 
   div[class="WA-logochangingthemes"]:hover > #WA-orb3 {
     display: block;
-    margin: -265px 35px 240px 680px;
-    width: 30px;
+    background-image: url("../css/fonts/Glowing\ Orb\ 3.png");
+    margin: -265px 35px 240px 700px;
+    width: 20px;
     height: 20px;
+    background-size: 140% 140%;
+    background-position: -3px -3px;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    filter: drop-shadow(black);
     animation: fadein 0.5s;
   }
 
   div[class="WA-logochangingthemes"]:hover > #WA-orb4 {
     display: block;
-    margin: -20px 110px 5px 680px;
-    width: 30px;
+    background-image: url("../css/fonts/Glowing\ Orb\ 4.png");
+    margin: -260px 110px 5px 780px;
+    width: 20px;
     height: 20px;
+    background-size: 140% 140%;
+    background-position: -3px -3px;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    filter: drop-shadow(black);
     animation: fadein 0.5s;
   }
 
@@ -151,6 +197,29 @@ img[id="WizardsAbodeLogo"] {
   100% { transform: translateY(5px); filter: drop-shadow(0 0 0.2rem rgba(3, 248, 228, 0.856));}
 }
 
+
+/*These lines of code are for the hover effect on my glowing 
+orbs.*/
+#WA-orb1:hover {
+  color: rgba(0, 255, 255, 2);
+  box-shadow: 0 0px 10px rgb(0 255 255);
+}
+
+
+#WA-orb2:hover {
+  color: rgba(255, 0, 0, 2);
+  box-shadow: 0 0px 10px rgb(255 255 0);
+}
+
+#WA-orb3:hover {
+  color: rgba(255, 255, 255, 2);
+  box-shadow: 0 0px 10px rgb(255 255 255);
+}
+
+#WA-orb4:hover {
+  color: rgba(255, 0, 255, 2);
+  box-shadow: 0 0px 10px rgb(255 0 255);
+}
 
 h1 {
     font-family: "AlegreyaHeaderFont";

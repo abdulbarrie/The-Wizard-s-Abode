@@ -176,7 +176,9 @@ function backgroundOrb1() {
    }
 }
 
-// This function immediately sets the theme the user last chose.
+/* This function immediately sets the theme the user last chose. I placed it on all four 
+"backgroundOrb" functions to ensure that they work for all themes.
+*/
 (function () {
     if (localStorage.getItem('theme') === orb1) {
         setTheme(orb1);
