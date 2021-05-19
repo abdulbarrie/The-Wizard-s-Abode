@@ -624,7 +624,9 @@ with the comment section below and to the right. The textarea
 block of code below defines how the text looks when commenting,
 its black text shadow and box shadow, and its inability to 
 resize. Also, I added a button block of code to put my 
-Cauldron image on the Submit Button.*/
+Cauldron image on the Submit Button.
+EDIT: Actually it didn't work out, so I made custom stylings
+for my submit buttons, both here and on form.css (see*/
 div[id="WA-comment-box"] {
   margin: 0px 0px 0px 615px;
 }

@@ -110,6 +110,7 @@ input.LoginRegisterInputFields {
   text-shadow: 0px 1px 1px rgb(0, 0, 0);
 }
 
+/*Here is my styling for each of my form buttons.*/
 input[id="WA-submit-login"] {
   display: block;
   margin-top: 0.3cm;
