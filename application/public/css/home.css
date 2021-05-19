@@ -360,7 +360,7 @@ laid on. Image Posts will function for displaying the grid for photos.*/
 div[class=HomepagePhotos] > img {
   width: auto;
   max-width: 200px;
-  min-height: 150px;
+  height: auto;
   max-height: 150px;
   filter: drop-shadow(0 0 0.2rem rgb(0, 0, 0));
   margin: auto;
@@ -418,18 +418,23 @@ div[class=HomepagePhotos-body] > a[class=HomepagePhotos-button] {
   text-align: center;
   font-family: "CentaurLabelFont";
   font-size: 30px;
-  color: rgb(0, 175, 255);
   text-shadow: 1px 1px 2px black;
 }
 
 .alert-danger{
   color: rgb(255, 0, 0);
+  text-shadow: 1px 1px 2px black;
 }
 
 .alert-success{
   color: rgb(0, 255, 0);
+  text-shadow: 1px 1px 2px black;
 }
 
+.alert-info {
+  color: rgb(0, 175, 255);
+  text-shadow: 1px 1px 2px black;
+}
 
 
 /*These blocks of code are for the search bar on my website. It will appear 
@@ -647,7 +652,7 @@ block of code below defines how the text looks when commenting,
 its black text shadow and box shadow, and its inability to 
 resize.*/
 div[id="WA-comment-box"] {
-  margin: 0px 0px 0px 555px;
+  margin: 0px 0px 0px 615px;
 }
 
 textarea[id="individual-post-comments"] {

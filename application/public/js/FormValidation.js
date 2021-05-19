@@ -86,8 +86,8 @@ function addFlashFromFrontEnd(message) {
    innerFlashDiv.appendChild(innerTextNode);
    flashMessageDiv.appendChild(innerFlashDiv);
    flashMessageDiv.setAttribute('id', 'flash-message');
-   innerFlashDiv.setAttribute('class', 'alert alert-info');
-   document.getElementsByTagName('body')[0].appendChild(flashMessageDiv);
+   innerFlashDiv.setAttribute('class', 'alert-info');
+   document.getElementById('WA-flashmessagebetween').appendChild(flashMessageDiv);
    setFlashMessageFadeOut(flashMessageDiv);
 }
 
