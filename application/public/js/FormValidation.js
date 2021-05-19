@@ -4,7 +4,7 @@
 flash messages, and the code for my special feature for the website.
 It originally contained my Form Validation for checking if a user
 registers a new account with valid data, but I moved it to the
-Registration.hbs file.*/
+Registration.hbs file. I also did the same for posting a new image.*/
 
 
 /*This function allows the user to click the search icon to make the
@@ -19,46 +19,6 @@ function searchBar() {
   }
 
 
-/*These next few functions and variables are for my Image Validation for 
-when a user posts a new image. It's similar to my Registration Form data.*/
-
-var titleInput = document.getElementById("posttitle");
-var descriptionInput = document.getElementById("description");
-
-function ImageValidation() {
-    if (!CheckTitle() || !CheckDescription()){
-        return false;
-    } else {
-        return true;
-  }
-}
-
-function CheckTitle() {
-    var actualTitle = /^[A-Za-z][A-Za-z0-9]+$/;
-    if (titleInput.value.match(actualTitle)) {
-        document.getElementById('title-message').style.color = 'green';
-        document.getElementById('title-message').innerHTML = 'Decent title';
-        return true;
-    } else if (!titleInput.value.match(actualTitle)) {    
-        document.getElementById('title-message').style.color = 'red';
-        document.getElementById('title-message').innerHTML = 'Error: Must enter a title for your post.';
-        return false;
-    }
-}
-
-
-function CheckDescription() {
-    var actualDescription = /^[A-Za-z][A-Za-z0-9]+$/;
-    if (descriptionInput.value.match(actualDescription)) {
-        document.getElementById('description-message').style.color = 'green';
-        document.getElementById('description-message').innerHTML = 'Decent title';
-        return true;
-    } else if (!descriptionInput.value.match(actualDescription)) {    
-        document.getElementById('description-message').style.color = 'red';
-        document.getElementById('description-message').innerHTML = 'Error: Must enter a description for your post.';
-        return false;
-    }
-}
 
 /*This function is for setting the opacity and time for the 
 Flash Message which pops up to show users an alert.*/

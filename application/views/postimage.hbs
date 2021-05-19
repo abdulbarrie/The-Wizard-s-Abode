@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="public/css/form.css">
+    
     <title>Post a New Image - The Wizard's Abode</title>
 </head>
 
@@ -11,7 +11,7 @@
     <form id="post-image" class="wizardsabode-postimage" method="POST" enctype="multipart/form-data" 
     action='/posts/createPost'>
         <label for="newimage">Post a saved image from your computer:</label>
-        <input type="file" id="newimage" name="newimage" accept="image/png, image/jpeg" required>
+        <input type="file" id="WA-newimage" name="newimage" accept="image/png, image/jpeg" required>
         
         <br>
 
@@ -32,8 +32,53 @@
             <label for="acceptableuse">By clicking this box, I verify that I agree with the Acceptable Use Policy.</label>
         </div>
 
-        <input type="submit" value="Post Image" onclick="return ImageValidation();">
+        <input type="submit" id="WA-postnewimage" value="Post Image" onclick="return ImageValidation();">
 
     </form>
-    <script defer type="text/javascript" src="public/js/FormValidation.js"></script>
+    <script defer>
+        
+    /*These next few functions and variables are for my Image Validation for 
+    when a user posts a new image. It's similar to my Registration Form data. 
+    I also had to put these functions inside my script to remove the Syntax 
+    Error.*/
+
+    var titleInput = document.getElementById("posttitle");
+    var descriptionInput = document.getElementById("description");
+
+    function ImageValidation() {
+        if (!CheckTitle() || !CheckDescription()){
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function CheckTitle() {
+        var actualTitle = /^[A-Za-z][A-Za-z0-9]+$/;
+        if (titleInput.value.match(actualTitle)) {
+            document.getElementById('title-message').style.color = 'green';
+            document.getElementById('title-message').innerHTML = 'Decent title';
+            return true;
+        } else if (!titleInput.value.match(actualTitle)) {    
+            document.getElementById('title-message').style.color = 'red';
+            document.getElementById('title-message').innerHTML = 'Error: Must enter a title for your post.';
+            return false;
+        }
+    }
+
+
+    function CheckDescription() {
+        var actualDescription = /^[A-Za-z][A-Za-z0-9]+$/;
+        if (descriptionInput.value.match(actualDescription)) {
+            document.getElementById('description-message').style.color = 'green';
+            document.getElementById('description-message').innerHTML = 'Decent title';
+            return true;
+        } else if (!descriptionInput.value.match(actualDescription)) {    
+            document.getElementById('description-message').style.color = 'red';
+            document.getElementById('description-message').innerHTML = 'Error: Must enter a description for your post.';
+            return false;
+        }
+    }
+
+    </script>
 </html>

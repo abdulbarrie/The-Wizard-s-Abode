@@ -46,6 +46,7 @@ img[id="WizardsAbodeLogo"] {
     animation-duration: 2s;
     animation-iteration-count: infinite;
     transform-origin: bottom;
+    
   }
 
 
@@ -60,52 +61,24 @@ img[id="WizardsAbodeLogo"] {
   a user doesn't hover on the Wizard's Abode logo.*/
   #WA-orb1  {
     display: none;
-    margin: 0px 35px 0px 280px;
-    background-image: url("../css/fonts/Glowing\ Orb\ 1.png");
-    width: 20px;
-    height: 20px;
-    background-size: 140% 140%;
-    background-position: -3px -3px;
-    background-repeat: no-repeat;
-    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
 
   }
 
 
   #WA-orb2 {
     display: none;
-    margin: 220px 0px -240px 280px;
-   
-    width: 20px;
-    height: 20px;
-    background-size: 140% 140%;
-    background-position: -3px -3px;
-    background-repeat: no-repeat;
-    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
   }
 
   #WA-orb3 {
     display: none;
-    margin: -265px 35px 240px 700px;
-    background-image: url("../css/fonts/Glowing\ Orb\ 3.png");
-    width: 20px;
-    height: 20px;
-    background-size: 140% 140%;
-    background-position: -3px -3px;
-    background-repeat: no-repeat;
-    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
   }
 
   #WA-orb4 {
     display: none;
-    margin: -20px 110px 5px 700px;
-    background-image: url("../css/fonts/Glowing\ Orb\ 4.png");
-    width: 20px;
-    height: 20px;
-    background-size: 140% 140%;
-    background-position: -3px -3px;
-    background-repeat: no-repeat;
-    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
   }
 
   /*When a user hovers on the Wizard's Abode cauldron, each of the four orbs will
@@ -650,7 +623,8 @@ font of Centaur and a black shadow.*/
 with the comment section below and to the right. The textarea
 block of code below defines how the text looks when commenting,
 its black text shadow and box shadow, and its inability to 
-resize.*/
+resize. Also, I added a button block of code to put my 
+Cauldron image on the Submit Button.*/
 div[id="WA-comment-box"] {
   margin: 0px 0px 0px 615px;
 }
@@ -663,9 +637,23 @@ textarea[id="individual-post-comments"] {
   text-shadow: 0px 0px 1px black;
   box-shadow: 0px 2px 2px rgb(0, 0, 0);
 }
-  
 
-/* And finally, I added a div container for my comment section in
+button[id="WA-comment-box-button"] {  
+  font-family: "CentaurLabelFont";
+  text-shadow: 0px 0px 1px black;
+  filter: drop-shadow(0px 1px 2px black);
+  background-color: lightskyblue;
+  margin-left: 66.5px;
+  width: 105px;
+  transition: all 0.2s ease-in-out;
+}
+  
+#WA-comment-box-button:hover {
+  color: rgba(255, 0, 255, 1);
+  box-shadow: 0 0px 10px rgba(100, 0, 250, .4);
+}
+
+/*And finally, I added a div container for my comment section in
 general. I realized I had problems aligning my images and comments
 in a consistent manner, so placing the comment container
 into a comment section really helped.*/
