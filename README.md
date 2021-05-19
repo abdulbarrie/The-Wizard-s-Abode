@@ -19,9 +19,8 @@ Please follow the instructions below and fill in the information requested when 
 # Build/Run Instructions
 
 ## Build Instructions
-1. steps here
-2. steps here
+1. cd csc317-termproject-abdulbarrie/application
 
 ## Run Instructions
-1. steps here
-2. steps here 
+1. npm install
+2. npm start
