@@ -54,28 +54,28 @@
     }
 
     function CheckTitle() {
-        var actualTitle = /^[A-Za-z][A-Za-z0-9]+$/;
+        var actualTitle = /^[A-Za-z][A-Za-z0-9 !@#$%^&*()""''\s]{0,30}$/;
         if (titleInput.value.match(actualTitle)) {
             document.getElementById('title-message').style.color = 'green';
-            document.getElementById('title-message').innerHTML = 'Decent title';
+            document.getElementById('title-message').innerHTML = 'Decent title.';
             return true;
         } else if (!titleInput.value.match(actualTitle)) {    
             document.getElementById('title-message').style.color = 'red';
-            document.getElementById('title-message').innerHTML = 'Error: Must enter a title for your post.';
+            document.getElementById('title-message').innerHTML = 'Error: Must enter a valid title for your post.';
             return false;
         }
     }
 
 
     function CheckDescription() {
-        var actualDescription = /^[A-Za-z][A-Za-z0-9]+$/;
+        var actualDescription = /^\w+[a-zA-Z0-9_,.?!""''|~`\/(){}\[\]@#$%^&\n ]*$/;
         if (descriptionInput.value.match(actualDescription)) {
             document.getElementById('description-message').style.color = 'green';
-            document.getElementById('description-message').innerHTML = 'Decent title';
+            document.getElementById('description-message').innerHTML = 'Good description.';
             return true;
         } else if (!descriptionInput.value.match(actualDescription)) {    
             document.getElementById('description-message').style.color = 'red';
-            document.getElementById('description-message').innerHTML = 'Error: Must enter a description for your post.';
+            document.getElementById('description-message').innerHTML = 'Error: Must enter a valid description for your post.';
             return false;
         }
     }
