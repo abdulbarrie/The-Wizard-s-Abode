@@ -51,9 +51,10 @@ img[id="WizardsAbodeLogo"] {
 
 
   div[class="WA-logochangingthemes"] {
-    width: 1030px;
-    height: 290px;
-    margin: auto;
+    width: 25em;
+    height: 15em;
+    margin: 1em auto;
+    padding: 1em 0;
   }
   
   /*To implement my cool feature where people can change the themes of my website,
@@ -62,9 +63,7 @@ img[id="WizardsAbodeLogo"] {
   #WA-orb1  {
     display: none;
     transition: all 0.2s ease-in-out;
-
   }
-
 
   #WA-orb2 {
     display: none;
@@ -86,37 +85,12 @@ img[id="WizardsAbodeLogo"] {
   smoothly as well.*/
   div[class="WA-logochangingthemes"]:hover > #WA-orb1 {
     display: block;
+    position: absolute;
+    top: 2em;
+    right: 30em;
+    left: 0em;
     background-image: url("../css/fonts/Glowing\ Orb\ 1.png");
-    margin: 45px 65px -140px 200px;
-    width: 20px;
-    height: 20px;
-    background-size: 140% 140%;
-    background-position: -3px -3px; 
-    background-repeat: no-repeat;
-    border-radius: 50%;
-    filter: drop-shadow(black);
-    animation: fadein 0.5s;
-
-  }
-
-  div[class="WA-logochangingthemes"]:hover > #WA-orb2 {
-    display: block;
-    background-image: url("../css/fonts/Glowing\ Orb\ 2.png");
-    margin: 120px 35px 0px 280px;
-    width: 20px;
-    height: 20px;
-    background-size: 140% 140%;
-    background-position: -3px -3px; 
-    background-repeat: no-repeat;
-    border-radius: 50%;
-    filter: drop-shadow(black);
-    animation: fadein 0.5s;
-  }
-
-  div[class="WA-logochangingthemes"]:hover > #WA-orb3 {
-    display: block;
-    background-image: url("../css/fonts/Glowing\ Orb\ 3.png");
-    margin: -265px 35px 240px 700px;
+    margin: auto;
     width: 20px;
     height: 20px;
     background-size: 140% 140%;
@@ -125,33 +99,73 @@ img[id="WizardsAbodeLogo"] {
     border-radius: 50%;
     filter: drop-shadow(black);
     animation: fadein 0.5s;
-  }
+}
 
-  div[class="WA-logochangingthemes"]:hover > #WA-orb4 {
-    display: block;
-    background-image: url("../css/fonts/Glowing\ Orb\ 4.png");
-    margin: -260px 110px 5px 780px;
-    width: 20px;
-    height: 20px;
-    background-size: 140% 140%;
-    background-position: -3px -3px;
-    background-repeat: no-repeat;
-    border-radius: 50%;
-    filter: drop-shadow(black);
-    animation: fadein 0.5s;
-  }
+div[class="WA-logochangingthemes"]:hover > #WA-orb2 {
+  display: block;
+  position: absolute;
+  top: 0em;
+  right: 30em;
+  left: 0em;
+  bottom: 80em;
+  background-image: url("../css/fonts/Glowing\ Orb\ 2.png");
+  margin: auto;
+  width: 20px;
+  height: 20px;
+  background-size: 140% 140%;
+  background-position: -3px -3px;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  filter: drop-shadow(black);
+  animation: fadein 0.5s;
+}
 
-  img[id="WizardsAbodeLogo"]:hover {
-    width: 330px;
-    height: 240px;
-    filter: drop-shadow(0 0 0.2rem rgba(3, 248, 228, 0.856));
-    animation-name: nudgelogo;
-    animation-timing-function: ease;
-  }
+div[class="WA-logochangingthemes"]:hover > #WA-orb3 {
+  display: block;
+  position: absolute;
+  top: 2em;
+  right: 0em;
+  left: 30em;
+  background-image: url("../css/fonts/Glowing\ Orb\ 3.png");
+  margin: auto;
+  width: 20px;
+  height: 20px;
+  background-size: 140% 140%;
+  background-position: -3px -3px;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  filter: drop-shadow(black);
+  animation: fadein 0.5s;
+}
+
+div[class="WA-logochangingthemes"]:hover > #WA-orb4 {
+  display: block;
+  position: absolute;
+  top: 0em;
+  right: 0em;
+  left: 30em;
+  bottom: 80em;
+  background-image: url("../css/fonts/Glowing\ Orb\ 4.png");
+  margin: auto;
+  width: 20px;
+  height: 20px;
+  background-size: 140% 140%;
+  background-position: -3px -3px;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  filter: drop-shadow(black);
+  animation: fadein 0.5s;
+}
+
+img[id="WizardsAbodeLogo"]:hover {
+  filter: drop-shadow(0 0 0.2rem rgba(3, 248, 228, 0.856));
+  animation-name: nudgelogo;
+  animation-timing-function: ease;
+}
 
   @keyframes fadein {
     from {
-        opacity:0;
+        opacity: 0;
     }
     to {
         opacity: 0.5;
