@@ -6,16 +6,6 @@ The purpose of this repository is to store all the code for your web application
 
 Please follow the instructions below and fill in the information requested when prompted.
 
-## Student Information
-
-|               | Information   |
-|:-------------:|:-------------:|
-| Student Name  | Abdul Barrie   |
-| Student ID    | 920616161     |
-| Student Email | abarrie1@mail.sfsu.edu    |
-
-
-
 # Build/Run Instructions
 
 ## Build Instructions
